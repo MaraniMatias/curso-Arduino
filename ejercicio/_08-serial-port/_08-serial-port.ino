@@ -6,6 +6,6 @@ void setup() {
 }
 
 void loop() {
-  float value = analogRead(potenPin);
+  int value = analogRead(potenPin);
   Serial.println(value);
 }
