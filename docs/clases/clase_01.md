@@ -39,10 +39,10 @@ A la condición que aparece en el exterior después de la actuación (o no actua
 
 <!-- .slide: data-background="#fff" -->
 #### Sistemas de Lazo Abierto
-![sistema de lazo abierto](../clases/img/lazo-abierto.jpg)
+![sistema de lazo abierto](./clases/img/lazo-abierto.jpg)
 
 #### Sistemas de Lazo Cerrados
-![sistema de lazo cerrado](../clases/img/lazo-cerrado.jpg)
+![sistema de lazo cerrado](./clases/img/lazo-cerrado.jpg)
 
 
 
