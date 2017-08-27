@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>Curso Arduino</title>
+  <link rel="stylesheet" href="./lib/css/font-awesome.min.css">
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+  <link rel="stylesheet" href="css/reveal.css">
+  <!--
+  <link rel="stylesheet" href="css/theme/solarized.css">
+  -->
+  <link rel="stylesheet" href="css/theme/black.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="./lib/css/zenburn.css">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<!--
+<body>
+-->
+
+<body style="background-color: #004d40;">
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Curso Arduino</h1>
+        </section>
+        <section>
+          <h3>Marani Matias Ezequiel</h3>
+          <p><i class="fa fa-envelope" aria-hidden="true"></i> marani.matias@gmail.com</p>
+          <p><i class="fa fa-telegram" aria-hidden="true"></i> & <i class="fa fa-twitter" aria-hidden="true"></i> @maranimatias</p>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2>Material del Curso</h2>
+          <p><a href="https://github.com/maranimatias/curso-arduino">github.com/MaraniMatias/curso-Arduino</a></p>
+          <p> URL corta :D <a href="https://goo.gl/eqPRSx">goo.gl/eqPRSx</a></p>
+          <p> Presentacion: <a href="https://goo.gl/VKMCUF">goo.gl/VKMCUF</a></p>
+        </section>
+        <section><img data-src="./clases/img/github.jpg"></section>
+        <section>
+          <p>Pagina Web <a href="https://arduino.cc">Arduino.cc</a></p>
+          <p>Programa (IDE) <a href="https://www.arduino.cc/en/Main/Software">ARDUINO 1.8.4</a></p>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1>Algunos proyectos con Arduino</h1>
+          <p><a href="https://create.arduino.cc/projecthub"></a>Arduino projecthub</p>
+        </section>
+        <section data-background-color="#fff" data-background-size="70%" data-background-image="./clases/img/impresora3d.jpeg"></section>
+        <section data-background-image="./clases/img/autito.jpg"></section>
+        <section data-background-color="#000" data-background-size="70%" data-background-image="./clases/img/brazo-robot.jpg"></section>
+        <section data-background-color="#fff" data-background-size="50%" data-background-image="./clases/img/3290.jpg"></section>
+        <section data-background-image="./clases/img/domotica.jpg"></section>
+        <section data-background-image="./clases/img/cortadora-pasto.jpg"></section>
+        <section data-background-color="#fff" data-background-size="50%" data-background-image="./clases/img/arania.jpg"></section>
+        <section data-background-size="100%" data-background-image="./clases/img/juego.jpg"></section>
+      </section>
+
+      <section data-markdown="./clases/clase_01.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-charset="utf-8"></section>
+
+      <section>
+        <section data-background-color="#2B506B">
+          <h1>Arduino</h1>
+          <p>El proyecto Arduino.</p>
+          <p>¿Para que se puede usar?</p>
+          <p>Microprocesador o Microcontrolador</p>
+        </section>
+        <section data-background-color="#2B506B">
+          <p>Especificaciones</p><a href="https://store.arduino.cc/usa/arduino-uno-rev3"></a></p>
+          <table>
+            <tbody>
+              <tr>
+                <td>Microcontroller</td>
+                <td><a href="http://www.atmel.com/Images/Atmel-42735-8-bit-AVR-Microcontroller-ATmega328-328P_Datasheet.pdf" target="_blank">ATmega328P</a></td>
+              </tr>
+              <tr>
+                <td>Operating Voltage</td>
+                <td>5V</td>
+              </tr>
+              <tr>
+                <td>DC Current per I/O Pin</td>
+                <td>20 mA</td>
+              </tr>
+              <tr>
+                <td>Flash Memory</td>
+                <td>32 KB (ATmega328P)</td>
+              </tr>
+              <tr>
+                <td>SRAM</td>
+                <td>2 KB (ATmega328P)</td>
+              </tr>
+              <tr>
+                <td>Clock Speed</td>
+                <td>16 MHz</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section data-background-image="./clases/img/arduino_uno.jpg" data-background-size="90%" data-background-color="#fff"></section>
+      </section>
+
+      <!--<section><section data-background-color="#960"><p>LED y ley de ohm</p><img data-src="./clases/img/circuito_01.jpg"></section></section>-->
+
+      <section>
+        <section>
+          <h1>Hola Muldo</h1>
+        </section>
+        <section data-background-color="#960" data-background-image="./clases/img/circuito_02.jpg" data-background-size="50%">
+          <img class="fragment" data-src="./clases/img/circuito_02b.jpg">
+          <!-- <section data-background-color="#960"><img data-src="./clases/img/circuito_02.jpg"> -->
+        </section>
+        <section data-background-image="./clases/img/ResistorColorChart.jpg" data-background-color="#ffffd9" data-background-size="80%"></section>
+        <section data-background-color="#fff">
+          <p>Protoboard</p>
+          <img data-src="./clases/img/protoboard.jpg">
+        </section>
+        <section data-background-color="#00979D">
+          <h2>Arduino IDE</h2>
+          <p>Referencia del lenguaje</p>
+        </section>
+        <section data-background-color="#960" data-background-image="./clases/img/circuito_03.jpg" data-background-size="50%"></section>
+      </section>
+
+      <section>
+        <section>
+          <h2>Un poco de lógica</h2>
+        </section>
+        <section>
+          <h2>Variables lógicas</h2>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Verdadero</td>
+                <td>True</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>Falso</td>
+                <td>False</td>
+                <td>0</td>
+              </tr>
+            </tbody>
+          </table>
+          <h2>Operadores lógicos</h2>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Y</td>
+                <td>AND</td>
+                <td>&&</td>
+              </tr>
+              <tr>
+                <td>O</td>
+                <td>OR</td>
+                <td>||</td>
+              </tr>
+              <tr>
+                <td>Negar</td>
+                <td>NOT</td>
+                <td>!</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <h2>Bloque de decisión</h2>
+          <h3>IF Else</h3>
+        </section>
+        <section>
+          <h3>Botones en serie y paralelo</h3>
+          <div class="fragment">
+            <p>
+              <b>2 botones en serie</b>
+              <p>Encender el LED si pulsas dos botones ala vez.</p>
+            </p>
+          </div>
+          <div class="fragment">
+            <p>
+              <b>2 botones en paralelo</b>
+              <p>Encender el LED si pulsas uno de los dos botones ala vez.</p>
+            </p>
+          </div>
+        </section>
+        <section data-background-color="#960" data-background-image="./clases/img/memoria.jpg" data-background-size="60%">
+          <h4>Memoria</h4>
+        </section>
+
+        <section>
+          <h2>Bloque de decisión</h2>
+          <h3>Switch Case</h3>
+        </section>
+        <section>
+          <h3>Display de 7 segmentos</h3>
+          <div class="fragment">
+            <p>
+              <b>2 botones, para adicionar 1 y sustraer 1</b>
+              <p>mostrando resultado en el display de 7 segmentos</p>
+              <p>Otro botón para en cero</p>
+              <p>En caso de números fuera del rango [0,9] mostrar E</p>
+            </p>
+          </div>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h2>Señal Analógica</h2>
+        </section>
+        <section data-background-color="#960" data-background-image="./clases/img/circuito_04.jpg" data-background-size="95%"></section>
+        <section>
+          <h3>Pines PWM</h3>
+        </section>
+        <section data-background-color="#fff" data-background-image="./clases/img/pwm.jpeg" data-background-size="100%"></section>
+        <section>
+          <p>Variaremos la tension que llega al LED</p>
+        </section>
+        <section>
+          <h3>¡MOMENTO DE HACER ALGO DE RUIDO!</h3>
+        </section>
+        <section data-background-color="#fff" data-background-image="./clases/img/tone.jpg" data-background-size="100%"></section>
+      </section>
+
+      <section>
+        <h2>Comunicación con la PC</h2>
+        <div class="fragment">
+          <p>Puerto Serie, leer y escribir</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sentencias para bucles</h2>
+        <p class="fragment">For</p>
+        <p class="fragment">While</p>
+        <p class="fragment">Do While</p>
+      </section>
+
+      <section>
+        <h2>Funciones</h2>
+      </section>
+
+      <section>
+        <section>
+          <h2>Sensor Infrarrojos</h2>
+        </section>
+        <section>
+          <img data-src="./clases/img/Arduino-IR-TV-Remote-Control-How-It-Works-2.png">
+        </section>
+        <section data-background-image="./clases/img/sensor-infrarrojo.png" data-background-color="#fff" data-background-size="70%">
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h2>Integrado L293D</h2>
+        </section>
+        <section data-background-color="#960" data-background-image="./clases/img/circuito_L293D.png" data-background-size="100%">
+        </section>
+        <section>
+          <p class="fragment">Con LED</p>
+          <p class="fragment">Motor paso a paso</p>
+          <p class="fragment">Puente H</p>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      //width: "100%",
+      //height: "100%",
+      margin: 0,
+      minScale: 1,
+      maxScale: 4,
+      dependencies: [{ src: 'plugin/markdown/marked.js' }, { src: 'plugin/markdown/markdown.js' }, { src: 'plugin/notes/notes.js', async: true }, { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }]
+    });
+  </script>
+</body>
+
+</html>
