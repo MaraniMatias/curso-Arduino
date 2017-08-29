@@ -6,7 +6,7 @@
 
 El usuario pasa a controlar o programar una máquina que hace el trabajo.
 
-Por ejemplo, ascensor de carga.
+Por ejemplo, ascensor.
 
 
 ## Automatización
@@ -72,8 +72,6 @@ Pueden ser Digitales o Analógicos.
 ## Actuadores
 
 Son los elementos que influyen directamente en la señal de salida del automatismo, modificando su magnitud según las instrucciones que reciben de la unidad de control.
-
-Pueden ser Neumáticos, Hidráulicos, Eléctricos, Digitales o Analógicos.
 
 
 **Tipos de Actuadores**
