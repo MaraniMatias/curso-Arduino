@@ -159,11 +159,11 @@ Para Arduino es un numero que representa un carácter según la tabla ASCII <a h
   rta = <span class="hljs-number">5</span> &lt; <span class="hljs-number">10</span>;   <span class="hljs-comment">// 'rta' -&gt; true.</span>
   rta = <span class="hljs-number">5</span> &gt;= <span class="hljs-number">10</span>/<span class="hljs-number">2</span>;<span class="hljs-comment">// 'rta' -&gt; true, primero hacer la operación matemática y después compara.</span>
 
-  rta = (x &gt;= <span class="hljs-number">10</span> &amp;&amp; x &lt;= <span class="hljs-number">20</span>) <span class="hljs-comment">//true si x está entre 10 y 20</span>
+  rta = (x &gt;= <span class="hljs-number">10</span> &amp;&amp; x &lt;= <span class="hljs-number">20</span>) <span class="hljs-comment">// Es true cuando x está entre 10 y 20</span>
 </code></pre>
 <p>En el ejemplo anterior usamos operadores lógicos, <code>&amp;&amp;</code> (AND), <code>||</code> (OR), <code>!</code> (NOT), también comparadores <code>==</code> (igualdad), <code>!=</code> (distinto), <code>&gt; &lt; &lt;= &gt;=</code> mayor, menor, mayor igual, menor igual.</p>
 <h2 id="ambito"><a class="header-anchor" href="#ambito" aria-hidden="true">#</a> Ámbito</h2>
-<pre><code class="language-c++"><span class="hljs-keyword">int</span> a = <span class="hljs-number">0</span>;    <span class="hljs-comment">// Es una variable Global, puede ser usada en todo el programa</span>
+<pre><code class="language-c++"><span class="hljs-keyword">int</span> a = <span class="hljs-number">0</span>;    <span class="hljs-comment">// Es una variable Global, puede ser usada en todo el programa.</span>
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
   <span class="hljs-keyword">int</span> b = <span class="hljs-number">0</span>;  <span class="hljs-comment">// Es una variables Local.</span>
   a++;        <span class="hljs-comment">// a = a + 1, entonces a  vale 1</span>
@@ -171,14 +171,14 @@ Para Arduino es un numero que representa un carácter según la tabla ASCII <a h
 }
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
   a = a + <span class="hljs-number">5</span>;  <span class="hljs-comment">// a vale 6</span>
-  b = a + <span class="hljs-number">3</span>;  <span class="hljs-comment">// ERROR b no esta declarada en esta declarada en la función loop</span>
+  b = a + <span class="hljs-number">3</span>;  <span class="hljs-comment">// ERROR b no esta declarada en la función loop.</span>
 }
 </code></pre>
 <h2 id="constantes"><a class="header-anchor" href="#constantes" aria-hidden="true">#</a> Constantes</h2>
 <p>Son modificadores de variables que indican que esa variable no cambia su valor, permite ahorrar memoria</p>
-<pre><code class="language-c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> NOTE_B0  31     <span class="hljs-comment">// NOTE_B0 es una constante, suele usarse</span></span>
+<pre><code class="language-c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> NOTE_B0  31     <span class="hljs-comment">// NOTE_B0 es una constante.</span></span>
 
-<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> LED_PIN = <span class="hljs-number">13</span>; <span class="hljs-comment">// Como el número de pin no cambia durante el programa</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> LED_PIN = <span class="hljs-number">13</span>; <span class="hljs-comment">// Como el número de pin no cambia durante el programa.</span>
 <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> BTN_PIN = <span class="hljs-number">0</span>;
 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
@@ -196,8 +196,8 @@ f = a;        <span class="hljs-comment">// como f es float su valores es 50.00<
 </code></pre>
 <h2 id="null"><a class="header-anchor" href="#null" aria-hidden="true">#</a> NULL</h2>
 <p>Cunado una variables es declara pero no se le asigna valor, tiene un valor nulo, NULL.</p>
-<pre><code class="language-c++"><span class="hljs-keyword">int</span> n;
-boolean rta;
+<pre><code class="language-c++"><span class="hljs-keyword">int</span> n;             <span class="hljs-comment">// el valor de 'n' es NULL</span>
+boolean rta;       <span class="hljs-comment">// el valor de 'rta' es NULL</span>
 
 rta = (n == <span class="hljs-literal">NULL</span>); <span class="hljs-comment">// el valor de 'rta' es true</span>
 </code></pre>
@@ -210,8 +210,8 @@ a = <span class="hljs-number">50</span>; <span class="hljs-comment">// en este m
 b = <span class="hljs-number">5</span>;  <span class="hljs-comment">// Desde ahora b contiene el valor 5, ahora es independente de a.</span>
 </code></pre>
 <h2 id="string"><a class="header-anchor" href="#string" aria-hidden="true">#</a> String</h2>
-<p>Es un tipo de variable que incorpora Arduino para manejar cadenas de caracteres, oraciones, palabras.
-En realidad se llama clase, permite hacer mas cosas que simplemente guardar un valor.
+<p>Es incorporada por Arduino para manejar cadenas de caracteres, oraciones, palabras.
+La palabra <em>String</em> hace referencia a una clase, permite hacer más cosas que una variable.
 Más información <a href="https://www.arduino.cc/en/Reference/StringObject">www.arduino.cc/en/Reference/StringObject</a></p>
 <pre><code class="language-c++">String oracion = <span class="hljs-string">"Hola"</span>;
 oracion = oracion + <span class="hljs-string">" Mundo"</span>;   <span class="hljs-comment">// oración contiene "Hola Mundo"</span>

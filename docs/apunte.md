@@ -96,14 +96,14 @@ Solo puede tomar dos valores Verdadero o Falso
   rta = 5 < 10;   // 'rta' -> true.
   rta = 5 >= 10/2;// 'rta' -> true, primero hacer la operación matemática y después compara.
 
-  rta = (x >= 10 && x <= 20) //true si x está entre 10 y 20
+  rta = (x >= 10 && x <= 20) // Es true cuando x está entre 10 y 20
 ```
 
 En el ejemplo anterior usamos operadores lógicos, `&&` (AND), `||` (OR), `!` (NOT), también comparadores `==` (igualdad), `!=` (distinto), `> < <= >=` mayor, menor, mayor igual, menor igual.
 
 ## Ámbito
 ```c++
-int a = 0;    // Es una variable Global, puede ser usada en todo el programa
+int a = 0;    // Es una variable Global, puede ser usada en todo el programa.
 void setup() {
   int b = 0;  // Es una variables Local.
   a++;        // a = a + 1, entonces a  vale 1
@@ -111,16 +111,16 @@ void setup() {
 }
 void loop() {
   a = a + 5;  // a vale 6
-  b = a + 3;  // ERROR b no esta declarada en esta declarada en la función loop
+  b = a + 3;  // ERROR b no esta declarada en la función loop.
 }
 ```
 
 ## Constantes
 Son modificadores de variables que indican que esa variable no cambia su valor, permite ahorrar memoria
 ```c++
-#define NOTE_B0  31     // NOTE_B0 es una constante, suele usarse
+#define NOTE_B0  31     // NOTE_B0 es una constante.
 
-const int LED_PIN = 13; // Como el número de pin no cambia durante el programa
+const int LED_PIN = 13; // Como el número de pin no cambia durante el programa.
 const int BTN_PIN = 0;
 
 void setup() {
@@ -143,8 +143,8 @@ f = a;        // como f es float su valores es 50.00
 ## NULL
 Cunado una variables es declara pero no se le asigna valor, tiene un valor nulo, NULL.
 ```c++
-int n;
-boolean rta;
+int n;             // el valor de 'n' es NULL
+boolean rta;       // el valor de 'rta' es NULL
 
 rta = (n == NULL); // el valor de 'rta' es true
 ```
@@ -160,8 +160,8 @@ b = 5;  // Desde ahora b contiene el valor 5, ahora es independente de a.
 ```
 
 ## String
-Es un tipo de variable que incorpora Arduino para manejar cadenas de caracteres, oraciones, palabras.
-En realidad se llama clase, permite hacer mas cosas que simplemente guardar un valor.
+Es incorporada por Arduino para manejar cadenas de caracteres, oraciones, palabras.
+La palabra _String_ hace referencia a una clase, permite hacer más cosas que una variable.
 Más información [www.arduino.cc/en/Reference/StringObject](https://www.arduino.cc/en/Reference/StringObject)
 
 ```c++
