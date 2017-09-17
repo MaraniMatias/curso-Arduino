@@ -9,7 +9,7 @@ void setup() {
 }
 
 void loop() {
-  float value = analogRead(potenPin);
+  int value = analogRead(potenPin);
 
   // primero solo el if
   if (value >= 1023) {

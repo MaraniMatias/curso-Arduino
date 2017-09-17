@@ -1,0 +1,560 @@
+<!DOCTYPE html><html><head><title>apunte</title><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/home/marani/Documents/home-bin/bin/node/lib/node_modules/mdmath2html/node_modules/github-markdown-css/github-markdown.css"><link rel="stylesheet" href="/home/marani/Documents/home-bin/bin/node/lib/node_modules/mdmath2html/node_modules/highlight.js/styles/tomorrow.css"><style>.markdown-body {box-sizing: border-box;min-width: 200px;margin: 0 auto;padding: 45px;}</style><script type="text/javascript" async src="/home/marani/Documents/home-bin/bin/node/lib/node_modules/mdmath2html/node_modules/mathjax/MathJax.js"></script><script type="text/javascript" async src="/home/marani/Documents/home-bin/bin/node/lib/node_modules/mdmath2html/node_modules/mathjax/config/TeX-MML-AM_HTMLorMML-full.js"></script></head><body class="markdown-body"><h1 id="variables"><a class="header-anchor" href="#variables" aria-hidden="true">#</a> Variables</h1>
+<p>Las variables nos permiten guardar algún tipo de dato, para luego usarlo o manipularlo.</p>
+<p>Los tipos de variables mas usados.</p>
+<h2 id="int"><a class="header-anchor" href="#int" aria-hidden="true">#</a> Int</h2>
+<p>Usada para guardar numero enteros positivos o negativos.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Tipo</th>
+<th style="text-align:center">Rango que puede guardar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">int</td>
+<td style="text-align:center">-32768 a 32767</td>
+</tr>
+<tr>
+<td style="text-align:center">unsigned int</td>
+<td style="text-align:center">0 a 65535</td>
+</tr>
+<tr>
+<td style="text-align:center">signed int</td>
+<td style="text-align:center">-32768 a 32767</td>
+</tr>
+<tr>
+<td style="text-align:center">short int</td>
+<td style="text-align:center">-128 a 127</td>
+</tr>
+<tr>
+<td style="text-align:center">unsigned short int</td>
+<td style="text-align:center">0 a 255</td>
+</tr>
+<tr>
+<td style="text-align:center">signed short int</td>
+<td style="text-align:center">-128 a 127</td>
+</tr>
+<tr>
+<td style="text-align:center">long int</td>
+<td style="text-align:center">-2147483648 a 2147483647</td>
+</tr>
+<tr>
+<td style="text-align:center">signed long int</td>
+<td style="text-align:center">-2147483648 a 2147483647</td>
+</tr>
+<tr>
+<td style="text-align:center">unsigned long int</td>
+<td style="text-align:center">0 a 4294967296</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-c++"><span class="hljs-keyword">int</span> entero = <span class="hljs-number">200</span>;
+<span class="hljs-keyword">short</span> <span class="hljs-keyword">int</span> entero_corto = <span class="hljs-number">25</span>;
+<span class="hljs-comment">// Se puede hacer cualquier operación matemática básica.</span>
+<span class="hljs-keyword">int</span> suma = entero + entero_corto;
+</code></pre>
+<h2 id="char"><a class="header-anchor" href="#char" aria-hidden="true">#</a> Char</h2>
+<p>Un char es cualquier carácter (a,Q,4,#,).
+Para Arduino es un numero que representa un carácter según la tabla ASCII <a href="http://www.asciitable.com">asciitable.com</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Tipo</th>
+<th style="text-align:center">Rango que puede guardar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">char</td>
+<td style="text-align:center">-128 a 127</td>
+</tr>
+<tr>
+<td style="text-align:center">unsigned char</td>
+<td style="text-align:center">0 a 255</td>
+</tr>
+<tr>
+<td style="text-align:center">signed char</td>
+<td style="text-align:center">-128 a 127</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-c++"><span class="hljs-keyword">char</span> a = <span class="hljs-string">'a'</span>; <span class="hljs-comment">// Representa a</span>
+<span class="hljs-keyword">char</span> A = <span class="hljs-number">65</span>;  <span class="hljs-comment">// Representa A</span>
+
+<span class="hljs-comment">// Como char es un int podemos restarle 1</span>
+<span class="hljs-comment">// A - 1 al se enteros 65 - 1 = 64 y 64 es @ para una variable char.</span>
+<span class="hljs-keyword">char</span> arroba = A - <span class="hljs-number">1</span>;
+</code></pre>
+<h2 id="float-y-double"><a class="header-anchor" href="#float-y-double" aria-hidden="true">#</a> Float y  Double</h2>
+<p>Esto dos tipo de variables nos permiten guardar números decimales, la diferencia esta en la presión.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Tipo</th>
+<th style="text-align:center">Rango que puede guardar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">float</td>
+<td style="text-align:center">`3.4E^{-38}` a `3.4E^{+38}`</td>
+</tr>
+<tr>
+<td style="text-align:center">double</td>
+<td style="text-align:center">`1.7E^{-308}` a `1.7E^{+308}`</td>
+</tr>
+<tr>
+<td style="text-align:center">long double</td>
+<td style="text-align:center">`3.4E^{-4932}` a `3.4E^{+4932}`</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-c++"><span class="hljs-keyword">float</span>  f = <span class="hljs-number">26.165</span>; <span class="hljs-comment">// Las comas son puntos</span>
+<span class="hljs-keyword">double</span> d = <span class="hljs-number">1256.05854</span>;
+</code></pre>
+<h2 id="boolean-o-bool"><a class="header-anchor" href="#boolean-o-bool" aria-hidden="true">#</a> Boolean o Bool</h2>
+<p>Solo puede tomar dos valores Verdadero o Falso</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Verdadero</th>
+<th style="text-align:center">Falso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">true</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-c++">  boolean verdadero = <span class="hljs-literal">true</span>, falso = <span class="hljs-literal">false</span>;
+  boolean rta;
+
+  rta = verdadero &amp;&amp; falso;     <span class="hljs-comment">// 'rta' -&gt; false.</span>
+  rta = falso     &amp;&amp; falso;     <span class="hljs-comment">// 'rta' -&gt; false.</span>
+  rta = verdadero &amp;&amp; <span class="hljs-number">1</span>;         <span class="hljs-comment">// 'rta' -&gt; true.</span>
+  rta = verdadero &amp;&amp; <span class="hljs-literal">true</span>;      <span class="hljs-comment">// 'rta' -&gt; true.</span>
+
+  rta = verdadero || falso;     <span class="hljs-comment">// 'rta' -&gt; true.</span>
+  rta = falso     || falso;     <span class="hljs-comment">// 'rta' -&gt; false.</span>
+  rta = verdadero || verdadero; <span class="hljs-comment">// 'rta' -&gt; true.</span>
+  rta = verdadero || <span class="hljs-literal">true</span>;      <span class="hljs-comment">// 'rta' -&gt; true.</span>
+
+  rta = verdadero == <span class="hljs-literal">true</span>;      <span class="hljs-comment">// 'rta' -&gt; true.</span>
+  rta = verdadero != <span class="hljs-literal">false</span>;     <span class="hljs-comment">// 'rta' -&gt; true.</span>
+
+  <span class="hljs-keyword">int</span> x = <span class="hljs-number">5</span>, y = <span class="hljs-number">10</span>;
+  rta = x == <span class="hljs-number">10</span>; <span class="hljs-comment">// 'rta' -&gt; false, el valor de 'x' no es igual a 10.</span>
+  rta = x == <span class="hljs-number">5</span>;  <span class="hljs-comment">// 'rta' -&gt; true.</span>
+  rta = x != <span class="hljs-number">5</span>;  <span class="hljs-comment">// 'rta' -&gt; false, el valor de 'x' es 5 y no es distinto (!=) de 5.</span>
+  rta = x != <span class="hljs-number">10</span>; <span class="hljs-comment">// 'rta' -&gt; true.</span>
+
+  rta = <span class="hljs-number">5</span> &lt; <span class="hljs-number">10</span>;   <span class="hljs-comment">// 'rta' -&gt; true.</span>
+  rta = <span class="hljs-number">5</span> &gt;= <span class="hljs-number">10</span>/<span class="hljs-number">2</span>;<span class="hljs-comment">// 'rta' -&gt; true, primero hacer la operación matemática y después compara.</span>
+
+  rta = (x &gt;= <span class="hljs-number">10</span> &amp;&amp; x &lt;= <span class="hljs-number">20</span>) <span class="hljs-comment">//true si x está entre 10 y 20</span>
+</code></pre>
+<p>En el ejemplo anterior usamos operadores lógicos, <code>&amp;&amp;</code> (AND), <code>||</code> (OR), <code>!</code> (NOT), también comparadores <code>==</code> (igualdad), <code>!=</code> (distinto), <code>&gt; &lt; &lt;= &gt;=</code> mayor, menor, mayor igual, menor igual.</p>
+<h2 id="ambito"><a class="header-anchor" href="#ambito" aria-hidden="true">#</a> Ámbito</h2>
+<pre><code class="language-c++"><span class="hljs-keyword">int</span> a = <span class="hljs-number">0</span>;    <span class="hljs-comment">// Es una variable Global, puede ser usada en todo el programa</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">int</span> b = <span class="hljs-number">0</span>;  <span class="hljs-comment">// Es una variables Local.</span>
+  a++;        <span class="hljs-comment">// a = a + 1, entonces a  vale 1</span>
+  b--;        <span class="hljs-comment">// b = b - 1, entonces b vale -1</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+  a = a + <span class="hljs-number">5</span>;  <span class="hljs-comment">// a vale 6</span>
+  b = a + <span class="hljs-number">3</span>;  <span class="hljs-comment">// ERROR b no esta declarada en esta declarada en la función loop</span>
+}
+</code></pre>
+<h2 id="constantes"><a class="header-anchor" href="#constantes" aria-hidden="true">#</a> Constantes</h2>
+<p>Son modificadores de variables que indican que esa variable no cambia su valor, permite ahorrar memoria</p>
+<pre><code class="language-c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> NOTE_B0  31     <span class="hljs-comment">// NOTE_B0 es una constante, suele usarse</span></span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> LED_PIN = <span class="hljs-number">13</span>; <span class="hljs-comment">// Como el número de pin no cambia durante el programa</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> BTN_PIN = <span class="hljs-number">0</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+  pinMode(LED_PIN, OUTPUT);
+  pinMode(BTN_PIN, INPUT);
+}
+</code></pre>
+<h2 id="conversion-automatica"><a class="header-anchor" href="#conversion-automatica" aria-hidden="true">#</a> Conversion automática</h2>
+<pre><code class="language-c++"><span class="hljs-keyword">int</span> a = <span class="hljs-number">50</span>;
+<span class="hljs-keyword">float</span> f;
+a = a + <span class="hljs-number">0.5</span>;  <span class="hljs-comment">// como a es int su valor es 50</span>
+f = a + <span class="hljs-number">0.5</span>;  <span class="hljs-comment">// como f es float su valor es 50.05</span>
+a = f;        <span class="hljs-comment">// como a es int su valor es 50</span>
+f = a;        <span class="hljs-comment">// como f es float su valores es 50.00</span>
+</code></pre>
+<h2 id="null"><a class="header-anchor" href="#null" aria-hidden="true">#</a> NULL</h2>
+<p>Cunado una variables es declara pero no se le asigna valor, tiene un valor nulo, NULL.</p>
+<pre><code class="language-c++"><span class="hljs-keyword">int</span> n;
+boolean rta;
+
+rta = (n == <span class="hljs-literal">NULL</span>); <span class="hljs-comment">// el valor de 'rta' es true</span>
+</code></pre>
+<h2 id="asignacion-entre-variables"><a class="header-anchor" href="#asignacion-entre-variables" aria-hidden="true">#</a> Asignación entre variables</h2>
+<pre><code class="language-c++"><span class="hljs-keyword">short</span> <span class="hljs-keyword">int</span> a = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">short</span> <span class="hljs-keyword">int</span> b;
+
+b = a;  <span class="hljs-comment">// Ahora b contiene lo que contiene a</span>
+a = <span class="hljs-number">50</span>; <span class="hljs-comment">// en este momento a y b contiene el valor 50</span>
+b = <span class="hljs-number">5</span>;  <span class="hljs-comment">// Desde ahora b contiene el valor 5, ahora es independente de a.</span>
+</code></pre>
+<h2 id="string"><a class="header-anchor" href="#string" aria-hidden="true">#</a> String</h2>
+<p>Es un tipo de variable que incorpora Arduino para manejar cadenas de caracteres, oraciones, palabras.
+En realidad se llama clase, permite hacer mas cosas que simplemente guardar un valor.
+Más información <a href="https://www.arduino.cc/en/Reference/StringObject">www.arduino.cc/en/Reference/StringObject</a></p>
+<pre><code class="language-c++">String oracion = <span class="hljs-string">"Hola"</span>;
+oracion = oracion + <span class="hljs-string">" Mundo"</span>;   <span class="hljs-comment">// oración contiene "Hola Mundo"</span>
+
+oracion.concat(<span class="hljs-string">":D"</span>);           <span class="hljs-comment">// oración contiene "Hola Mundo :D"</span>
+oracion.replace(<span class="hljs-string">'o'</span>, <span class="hljs-string">'0'</span>);      <span class="hljs-comment">// oración contiene "H0la Mund0 :D"</span>
+</code></pre>
+<h1 id="senales"><a class="header-anchor" href="#senales" aria-hidden="true">#</a> Señales</h1>
+<h2 id="digital"><a class="header-anchor" href="#digital" aria-hidden="true">#</a> Digital</h2>
+<p>Para leer o escribir una señal digital</p>
+<pre><code class="language-c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+  pinMode(<span class="hljs-number">13</span>, OUTPUT);
+  pinMode(<span class="hljs-number">0</span>, INPUT);
+
+  digitalWrite(<span class="hljs-number">13</span>, HIGH);   <span class="hljs-comment">// Enviamos un pulso alto al pin 13</span>
+  delay(<span class="hljs-number">500</span>);
+  digitalWrite(<span class="hljs-number">13</span>, LOW);    <span class="hljs-comment">// Enviamos un pulso bajo al pin 13</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">int</span> val = digitalRead(<span class="hljs-number">0</span>); <span class="hljs-comment">// Permite leer el pin 0, puede ser HIGH o LOW</span>
+  digitalWrite(<span class="hljs-number">13</span>, val);
+}
+</code></pre>
+<p>Los términos <code>HIGH</code> y <code>LOW</code> son constantes globales y su valor son <code>1</code> y <code>0</code> respectivamente.</p>
+<h2 id="analogicas"><a class="header-anchor" href="#analogicas" aria-hidden="true">#</a> Analógicas</h2>
+<p>Las señales analógicas varían su valor con el tiempo de forma continua, por esa razón Arduino solo puede leer con los pines que lleva un <code>A</code> como ser <code>A0</code>, <code>A5</code> y no podemos emitir señales analógicas.</p>
+<p>Con señales digitales tenemos valores <code>1</code> o <code>0</code> pero con las analógicas tenemos valores que varía desde <code>0</code> a <code>1023</code>, con un valor <code>0</code> el pin recibe <code>0 volt</code> y con un valor <code>1023</code> el pin recibe <code>5 volt</code> (limite de tension que puede manejar Arduino).</p>
+<pre><code class="language-c++"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> POTENCIOMETRO_PIN= A0;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> LDR_PIN = A1;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+  pinMode(POTENCIOMETRO_PIN, INPUT);
+  pinMode(LDR_PIN, INPUT);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// valorPote des 0 a 1023 según en que poción ese encuentra</span>
+  <span class="hljs-keyword">int</span> valorPote = analogRead(POTENCIOMETRO_PIN);
+  <span class="hljs-comment">// valorLDR des 0 a 1023 según cuanta luz recibe.</span>
+  <span class="hljs-keyword">int</span> valorLDR  = analogRead(LDR_PIN);
+}
+</code></pre>
+<p>La conexión la LDR es la misma que para un botón.</p>
+<p>Conexión para un potenciómetro.</p>
+<p><img src="./clases/img/ldr.jpeg" alt="Conexión para un potenciómetro."></p>
+<h3 id="pines-que-permite-modular-el-ancho-de-pulso-pwm"><a class="header-anchor" href="#pines-que-permite-modular-el-ancho-de-pulso-pwm" aria-hidden="true">#</a> Pines que permite modular el ancho de pulso (PWM)</h3>
+<p>Como Arduino no puede variar los niveles de tension de sus pines, podemos simular señales analógicas, variando la longitud del pulso, de esta manera reducimos la tension promedio que llega a un LED, por ejemplo.</p>
+<p>Los pines PWM esta marcados con <code>~</code> como los pines 3,5,6,9,10,11,13.
+La función que usaremos es <code>analogWrite(pin,valor)</code> conde <code>pin</code> es el numero de pin a usar y <code>valor</code> puede variar d e 0 a 255.</p>
+<pre><code class="language-C++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+  pinMode(<span class="hljs-number">11</span>, OUTPUT);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+  analogWrite(<span class="hljs-number">11</span>, <span class="hljs-number">0</span>);     <span class="hljs-comment">// LED apagado</span>
+  delay(<span class="hljs-number">200</span>);
+  analogWrite(<span class="hljs-number">11</span>, <span class="hljs-number">125</span>);   <span class="hljs-comment">// LED prendido con la mitad de su brillo</span>
+  delay(<span class="hljs-number">200</span>);
+  analogWrite(<span class="hljs-number">11</span>, <span class="hljs-number">255</span>);   <span class="hljs-comment">// LED prendido con el maximo de su brillo</span>
+}
+</code></pre>
+<p>Con la función <code>tone(pin, frecuencia, duración)</code> podemos variar la frecuencia del pulso, normalmente usada para con piezo buzzer.</p>
+<p>Donde <code>frecuencia</code> puede variar 31 a 65535 (para Arduino Uno, Mega, Leonardo), <code>duracion</code> es el tiempo en que va a mantenerse esa frecuencia.</p>
+<p>Para usar varios pines necesitamos <code>noTone(pin)</code> para apagar los pines anteriores.</p>
+<p>Ejemplo en <a href="https://www.arduino.cc/en/Tutorial/ToneMelody">arduino.cc/en/Tutorial/ToneMelody</a></p>
+<blockquote>
+<p>También puedes ver los ejemplo
+<code>_06-pin-PWM</code>
+<code>_07a-buzer-LDR-PWM</code>
+<code>_07b-buzer-tone</code>
+junto a los apuntes del curso.</p>
+</blockquote>
+<h1 id="comunicacion-por-medio-del-puerto-serie-usb"><a class="header-anchor" href="#comunicacion-por-medio-del-puerto-serie-usb" aria-hidden="true">#</a> Comunicación por medio del puerto serie (USB).</h1>
+<p>Arduino puede recibir ordenes por el puerto serie y escribir en él, enviar información.</p>
+<p>Podemos ver y escribir en el puerto con el monitor serie del IDE de Arduino, click en Herramientas -&gt; Monitor serie.</p>
+<pre><code class="language-c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// Para establecer a que velocidad serán enviado los datos.</span>
+  Serial.begin(<span class="hljs-number">9600</span>); <span class="hljs-comment">// 9600 es el valor predeterminado</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// Escribe en el puerto serie "HOLA "</span>
+  Serial.print(<span class="hljs-string">"HOLA "</span>);
+  <span class="hljs-comment">// Escribe en el puerto serie "MUNDO" y baja una linea</span>
+  Serial.println(<span class="hljs-string">"MUNDO"</span>);
+  delay(<span class="hljs-number">500</span>);
+}
+</code></pre>
+<pre><code class="language-c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">char</span> value = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">if</span> (Serial.available() &gt; <span class="hljs-number">0</span>) { <span class="hljs-comment">// Si recibimos alguna señal</span>
+    value = Serial.read();      <span class="hljs-comment">// lee el puerto</span>
+    Serial.print(<span class="hljs-string">"Msj: "</span>);
+    Serial.println(value);      <span class="hljs-comment">// escribe en el puerto</span>
+  }
+}
+</code></pre>
+<blockquote>
+<p>También puedes ver los ejemplo
+<code>_08-serial-port</code>
+<code>_09-serial-port-leer</code>
+<code>_19-serial-voltaje</code>
+junto a los apuntes del curso.</p>
+</blockquote>
+<h1 id="bloques-de-decision"><a class="header-anchor" href="#bloques-de-decision" aria-hidden="true">#</a> Bloques de decisión</h1>
+<h2 id="if-else"><a class="header-anchor" href="#if-else" aria-hidden="true">#</a> If-else</h2>
+<pre><code class="language-c++"><span class="hljs-keyword">bool</span> condicion = <span class="hljs-literal">true</span>;
+<span class="hljs-comment">// El if dentro de los paréntesis necesita una condición cuyo valor es 'true' o 'false'</span>
+<span class="hljs-keyword">if</span> ( condicion ) {
+  <span class="hljs-comment">// en caso de que 'condición' tenga un resultado true</span>
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-comment">// en caso de que 'condición' tenga un resultado false</span>
+}
+
+<span class="hljs-keyword">int</span> a = <span class="hljs-number">5</span>, b = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">if</span> (a &gt; b) {
+  <span class="hljs-comment">// en caso de 'a' es mayor que 'b'</span>
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (a == <span class="hljs-number">2</span>) {
+  <span class="hljs-comment">// en caso de que 'a' es menor a 'b' y 'a' es igual a '2'</span>
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-comment">// en caso de que no se cumpla ninguna de las anteriores</span>
+}
+</code></pre>
+<blockquote>
+<p>También puedes ver los ejemplo
+<code>_02-if-elseif-else</code>
+<code>_03-btn-ej-logicos</code>
+junto a los apuntes del curso.</p>
+</blockquote>
+<p>Forma corta del if else, solo se puede usar si existe camino por el verdadero y el falso</p>
+<pre><code class="language-c++"><span class="hljs-keyword">int</span> puntos, String nota = <span class="hljs-string">""</span>;
+<span class="hljs-comment">// Cuando puntos sea mayor igual a 6</span>
+<span class="hljs-comment">// la variable notas contiene "Aprobado" de lo contrario "Desaprobado"</span>
+nota = puntos &gt;= <span class="hljs-number">6</span> ? <span class="hljs-string">"Aprobado"</span> : <span class="hljs-string">"Desaprobado"</span>;
+</code></pre>
+<h2 id="switch"><a class="header-anchor" href="#switch" aria-hidden="true">#</a> Switch</h2>
+<pre><code class="language-c++"><span class="hljs-keyword">char</span> a = <span class="hljs-string">'a'</span>;
+
+<span class="hljs-keyword">switch</span> (a) {
+  <span class="hljs-keyword">case</span> <span class="hljs-string">'a'</span>:
+    <span class="hljs-comment">// código a ejecutar cuando a es igual a 'a'</span>
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-string">'b'</span>:
+    <span class="hljs-comment">// código a ejecutar cuando a es igual a 'b'</span>
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-string">'c'</span>:
+  <span class="hljs-keyword">case</span> <span class="hljs-string">'d'</span>:
+    <span class="hljs-comment">// código a ejecutar cuando a es igual a 'c' o a 'd'</span>
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">default</span>:
+    <span class="hljs-comment">// código a ejecutar cuando a NO es igual a 'a' ni a 'b' ni a 'c' ni a 'd'</span>
+    <span class="hljs-keyword">break</span>;
+}
+</code></pre>
+<blockquote>
+<p>También puedes ver los ejemplo
+_04-display-switch-case
+junto a los apuntes del curso.</p>
+</blockquote>
+<h1 id="bucles"><a class="header-anchor" href="#bucles" aria-hidden="true">#</a> Bucles</h1>
+<h2 id="while-y-do-while"><a class="header-anchor" href="#while-y-do-while" aria-hidden="true">#</a> While y Do While</h2>
+<pre><code class="language-c++"><span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">while</span> ( i &lt; <span class="hljs-number">150000</span> ) {
+  <span class="hljs-comment">// Mientras i sea menor a 1500000</span>
+  digitalWrite( pinLED, HIGH);
+  i++;
+}
+digitalWrite( pinLED, LOW);
+
+<span class="hljs-keyword">do</span> {
+  <span class="hljs-comment">// Hacer una vez y después evaluar la condición</span>
+  digitalWrite( pinLED, HIGH);
+  delay(<span class="hljs-number">500</span>);
+} <span class="hljs-keyword">while</span> ( i &lt; <span class="hljs-number">150000</span>);
+digitalWrite( pinLED, LOW);
+</code></pre>
+<h2 id="for"><a class="header-anchor" href="#for" aria-hidden="true">#</a> For</h2>
+<p>La sentencia for tiene tres parámetros, inicialización, condición, incremento.</p>
+<ul>
+<li>Inicialización <code>int i = 0</code>, se lo primero a ejecutarse y una única vez.</li>
+<li>Condición <code>i &lt;= 3</code>, mientras la condición de un resultado <code>true</code> entra al código entre llaves <code>{...}</code>.</li>
+<li>Incremento <code>i++</code>, después de terminar con las sentencias entre llaves ejecuta la sentencia incremento.</li>
+</ul>
+<pre><code class="language-c++"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span> ; i &lt;= <span class="hljs-number">3</span>; i++ ) {
+  Serial.println(i); <span class="hljs-comment">// Muestra por el puesto serie el valor de i</span>
+}
+<span class="hljs-comment">/*
+Resultado en puerto serie
+  0
+  1
+  2
+  3
+*/</span>
+</code></pre>
+<p>Este código trabaja de la siguiente manera, primero se inicializa la variable i con valor 0, luego se evalúa la condición si se cumple ejecuta el código entre llaves, después incrementa i y vuelve a probar la condición si se cumple vuelve a ejecutar el código entre llaves al terminal incrementa i, asi sucesivamente hasta que la condición no se cumpla.</p>
+<h1 id="arreglos"><a class="header-anchor" href="#arreglos" aria-hidden="true">#</a> Arreglos</h1>
+<p>Imaginemos que tenemos que guardar la castidad de habitantes de 7 casas.</p>
+<p>Podemos crear 7 variables enteras una para cada casa, pero no seria cómodo ni lógico, para esto casa usamos los arreglos (array).</p>
+<p><strong>Arreglos de enteros</strong></p>
+<pre><code class="language-c++"><span class="hljs-comment">// Con los [] indicamos que es un arreglo y con {} para inicializar su valores</span>
+<span class="hljs-keyword">int</span> casas[] = { <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span> };
+
+casas[<span class="hljs-number">0</span>]; <span class="hljs-comment">// para obtener los habitantes de la casa 0, en este caso 4</span>
+casas[<span class="hljs-number">6</span>]; <span class="hljs-comment">// para obtener los habitantes de la casa 6, en este caso 1</span>
+
+<span class="hljs-keyword">int</span> indice = <span class="hljs-number">0</span>;
+casas[indice]; <span class="hljs-comment">// para obtener los habitantes de la casa 0, en este caso 4</span>
+</code></pre>
+<p><strong>Arreglos de caracteres</strong></p>
+<pre><code class="language-c++"><span class="hljs-keyword">char</span> palabra[] = {<span class="hljs-string">'H'</span>, <span class="hljs-string">'o'</span>, <span class="hljs-string">'l'</span>, <span class="hljs-string">'a'</span>};
+<span class="hljs-keyword">char</span> stringArd[] = <span class="hljs-string">"arduino"</span>;
+
+palabra[<span class="hljs-number">0</span>] = <span class="hljs-string">'h'</span>;         <span class="hljs-comment">// en el lugar 0 del arreglo palabras guardamos h</span>
+Serial.println(palabra);  <span class="hljs-comment">// hola</span>
+</code></pre>
+<blockquote>
+<p>También puedes ver los ejemplo
+<code>_10-array</code>
+<code>_11-for</code>
+junto a los apuntes del curso.</p>
+</blockquote>
+<h1 id="funciones"><a class="header-anchor" href="#funciones" aria-hidden="true">#</a> Funciones</h1>
+<p>Las funciones los permite hacer que nuestro código sea reutilizable y modular.</p>
+<p>La función <code>loop()</code> es una de las que mas usamos, cuando las funciones no devuelve valore se agreda <code>void</code> en su declaración <code>void loop()</code></p>
+<pre><code class="language-c++"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> pinLEDs[] = {<span class="hljs-number">8</span>, <span class="hljs-number">10</span>, <span class="hljs-number">12</span>};
+
+<span class="hljs-comment">// Declaración de la función loop</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+  delay(<span class="hljs-number">500</span>); <span class="hljs-comment">// Llamada ala función delay</span>
+  ledOff();   <span class="hljs-comment">// Llamada ala función ledOff</span>
+  delay(<span class="hljs-number">500</span>);
+  ledOn();    <span class="hljs-comment">// Llamada ala función ledOn</span>
+}
+
+<span class="hljs-comment">// Declaración de la función ledOff</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ledOff</span> <span class="hljs-params">()</span> </span>{
+  digitalWrite( pinLEDs[<span class="hljs-number">0</span>], LOW);
+  digitalWrite( pinLEDs[<span class="hljs-number">1</span>], LOW);
+  digitalWrite( pinLEDs[<span class="hljs-number">2</span>], LOW);
+}
+
+<span class="hljs-comment">// Declaración de la función ledOn</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ledON</span> <span class="hljs-params">()</span> </span>{
+  digitalWrite( pinLEDs[<span class="hljs-number">0</span>], HIGH);
+  digitalWrite( pinLEDs[<span class="hljs-number">1</span>], HIGH);
+  digitalWrite( pinLEDs[<span class="hljs-number">2</span>], HIGH);
+}
+</code></pre>
+<p>Ahora queremos enviar información a nuestra función, para eso lo hacemos por medio de parámetros, que indicamos dentro de los paréntesis cuando declaramos una función y tenemos que indicar de que tipo son los valores que recibe nuestra función.</p>
+<pre><code class="language-c++"><span class="hljs-comment">// nuestra función nos permite sumar dos numero y mostrarlos.</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sumaMostrar</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{
+  Serial.println(a+b);
+}
+</code></pre>
+<p>Ahora queremos que nuestra función devuelva el resulta de la suma, para eso en lugar de <code>void</code> tenemos que indicar el tipo de valor a devolver.</p>
+<pre><code class="language-c++"><span class="hljs-comment">// nuestra función nos permite sumar dos numero y retorna el resultado.</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">suma</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{
+  <span class="hljs-keyword">return</span> a + b;
+}
+</code></pre>
+<p>Ahora podemos re-escribir la función sumaMustra</p>
+<pre><code class="language-c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">int</span> a = <span class="hljs-number">5</span>, b = <span class="hljs-number">5</span>;
+  sumaMostrar(a,b);
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sumaMostrar</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{
+  <span class="hljs-keyword">int</span> rta = suma(a,b);
+  Serial.println( rta );
+}
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">suma</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{
+  <span class="hljs-keyword">return</span> a + b;
+}
+</code></pre>
+<p>Usamos siempre <code>a</code> y <code>b</code> pero no son variables distintas para cada función.</p>
+<h2 id="funciones-en-distintos-archivos"><a class="header-anchor" href="#funciones-en-distintos-archivos" aria-hidden="true">#</a> Funciones en distintos archivos</h2>
+<p>Arduino IDE nos permite crear varios archivos <code>.ino</code> en la carpeta de nuestro proyecto, de esta manera podemos tener el programa principal (setup y loop) en el archivo con igual nombre que la carpeta y otros archivos que contengan las funciones secundarias de nuestro programa.</p>
+<h2 id="variables-estaticas"><a class="header-anchor" href="#variables-estaticas" aria-hidden="true">#</a> Variables estáticas</h2>
+<p>La palabra clave <code>static</code> se utiliza para crear variables que son visibles para una sola función. sin embargo, a diferencia de las variables locales que se crean y destruyen cada vez que se llama a una función, las variables estáticas persisten más allá de la llamada a la función, preservando sus datos entre las llamadas de función.</p>
+<h1 id="librerias"><a class="header-anchor" href="#librerias" aria-hidden="true">#</a> Librerías</h1>
+<p>Se usan para encapsular código y usar código de terceros.</p>
+<h2 id="de-sistema"><a class="header-anchor" href="#de-sistema" aria-hidden="true">#</a> De sistema</h2>
+<p>Si bien Arduino proporciona muchas funciones matemáticas puede ser que necesito otras que esta incluidas en la librería <code>math.h</code></p>
+<pre><code class="language-c++"><span class="hljs-comment">// Contiene funciones como `round`, `floor`, `trunc`</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;math.h&gt;</span></span>
+
+<span class="hljs-keyword">double</span> result;
+result = round( <span class="hljs-number">2.3</span>);  <span class="hljs-comment">// 2.0</span>
+result = <span class="hljs-built_in">floor</span>( <span class="hljs-number">5.5</span>);  <span class="hljs-comment">// 5.0</span>
+result = trunc(<span class="hljs-number">-3.8</span>);  <span class="hljs-comment">// -3.0</span>
+</code></pre>
+<h2 id="de-terceros"><a class="header-anchor" href="#de-terceros" aria-hidden="true">#</a> De terceros</h2>
+<p>Para manejar un control remoto, con infrarrojo usaremos las librerías que podemos descargar de <a href="https://github.com/z3t0/Arduino-IRremote">github.com/z3t0/Arduino-IRremote</a></p>
+<pre><code class="language-c++"><span class="hljs-comment">// Importamos la librería a usar</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;IRremote.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;IRremoteInt.h&gt;</span></span>
+
+<span class="hljs-keyword">int</span> RECV_PIN = <span class="hljs-number">11</span>;
+<span class="hljs-keyword">int</span> STATUS_PIN = <span class="hljs-number">13</span>;
+
+<span class="hljs-comment">// la librería nos pide incluir esta lineas</span>
+<span class="hljs-function">IRrecv <span class="hljs-title">irrecv</span><span class="hljs-params">(RECV_PIN)</span></span>;
+decode_results results;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+  pinMode(STATUS_PIN,OUTPUT);
+  Serial.begin(<span class="hljs-number">9600</span>);
+  irrecv.enableIRIn();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">if</span> (irrecv.decode(&amp;results))    {
+    Serial.println(results.value);
+    <span class="hljs-comment">// Viendo los valores de `results.value` podemos ver el código del botón que presionamos.</span>
+    <span class="hljs-keyword">if</span> (results.value == <span class="hljs-number">1477816464</span>) { <span class="hljs-comment">// cuando es el botón con código 1477816464</span>
+      digitalWrite(STATUS_PIN,HIGH);
+    }
+    <span class="hljs-keyword">if</span> (results.value ==  <span class="hljs-number">374608567</span>) { <span class="hljs-comment">// cuando es el botón con código 374608567</span>
+      digitalWrite(STATUS_PIN,LOW);
+    }
+    irrecv.resume();
+  }
+}
+</code></pre>
+<p>El sensor infrarrojo que usamos es <em>VS1838B</em>, con tres pin, 1º Señal, 2º tierra y el 3º 5 volt.
+En la carpeta datasheet hay más información, para este sensor conviene buscar cual es cada pin.</p>
+<blockquote>
+<p>También puedes ver los ejemplo
+<code>_14a-control-inf</code>
+<code>_18-debounce</code>
+junto a los apuntes del curso.</p>
+</blockquote>
+<h1 id="integrados"><a class="header-anchor" href="#integrados" aria-hidden="true">#</a> Integrados</h1>
+<p>Los integrados es un componente electrónico que contiene un circuito en el interior.
+El integrado L293D nos permite manejar dos motores de corriente continua y invertir su giro o manejar un motor paso a paso.</p>
+<p>La imagen muestra para que son cada pin del integrado.</p>
+<ul>
+<li>Los pines <code>4,5,13,12</code> se conectan directamente a tierra.</li>
+<li>Los pines <code>8,16</code> se conectan a los 5 volt.</li>
+<li>Los pines <code>2,7,15,10</code> cuando estos pines reciben tensión, un pulso positivo, el integrado entrega tension en los pines <code>3,6,14,11</code> según corresponda, para el pin <code>2</code> corresponde ala salida <code>3</code>.</li>
+<li>Los pines <code>1,9</code> habilita o deshabilitan la salida de los pines de ese lado del integrado.</li>
+</ul>
+<p><img src="./clases/img/L293D.jpeg" alt="L293D"></p>
+<p>Con este integrado maneja de manera igual que encender un led, solo hay que tener cuidado cuando tratamos de invertir el giro de motores de corriente continua porque si el motor recibe 5 volt en su dos pines se quema.</p>
+<p>Recomiendo probar primero con LED y la tension que corresponde para ellos.</p>
+<p>En la carpeta datasheet hay más información para el integrado L293D.</p>
+</body></html>

@@ -4,7 +4,7 @@ int const tiempo = 1000;
 
 void setup() {
   pinMode(led, OUTPUT);
-  pinMode(btn, OUTPUT);
+  pinMode(btn, INPUT);
 }
 
 void loop() {
