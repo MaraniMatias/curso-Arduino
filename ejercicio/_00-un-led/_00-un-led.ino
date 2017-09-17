@@ -2,7 +2,7 @@ int const led = 13;
 int const tiempo = 1000;
 
 void setup() {
-  pinMode(led,OUTPUT);
+  pinMode(led, OUTPUT);
 }
 
 void loop() {
@@ -12,8 +12,8 @@ void loop() {
   delay(tiempo);
 }
 /*
-Contar del entorno
-Primero directo con nro de pin, 13.
-Agregar variables globales.
-Transformarlas en constante.
+  Contar del entorno
+  Primero directo con nro de pin, 13.
+  Agregar variables globales.
+  Transformarlas en constante.
 */
