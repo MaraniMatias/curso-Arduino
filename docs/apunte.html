@@ -1,6 +1,5 @@
 <!DOCTYPE html><html><head><title>apunte</title><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/home/marani/Documents/home-bin/bin/node/lib/node_modules/mdmath2html/node_modules/github-markdown-css/github-markdown.css"><link rel="stylesheet" href="/home/marani/Documents/home-bin/bin/node/lib/node_modules/mdmath2html/node_modules/highlight.js/styles/tomorrow.css"><style>.markdown-body {box-sizing: border-box;min-width: 100px;margin: 0 auto;padding: 30px;}</style><script type="text/javascript" async src="/home/marani/Documents/home-bin/bin/node/lib/node_modules/mdmath2html/node_modules/mathjax/MathJax.js"></script><script type="text/javascript" async src="/home/marani/Documents/home-bin/bin/node/lib/node_modules/mdmath2html/node_modules/mathjax/config/TeX-MML-AM_HTMLorMML-full.js"></script></head><body class="markdown-body"><h1 id="variables"><a class="header-anchor" href="#variables" aria-hidden="true">#</a> Variables</h1>
-<p>Las variables nos permiten guardar algún tipo de dato, para luego usarlo o manipularlo.</p>
-<p>Los tipos de variables mas usados.</p>
+<p>Las variables nos permiten guardar algún tipo de dato, para luego usarlo o manipularlo, algúnos de los  tipos de variables mas usados.</p>
 <h2 id="int"><a class="header-anchor" href="#int" aria-hidden="true">#</a> Int</h2>
 <p>Usada para guardar numero enteros positivos o negativos.</p>
 <table>
@@ -81,10 +80,12 @@ Para Arduino es un numero que representa un carácter según la tabla ASCII <a h
 </table>
 <pre><code class="language-c++"><span class="hljs-keyword">char</span> a = <span class="hljs-string">'a'</span>; <span class="hljs-comment">// Representa a</span>
 <span class="hljs-keyword">char</span> A = <span class="hljs-number">65</span>;  <span class="hljs-comment">// Representa A</span>
-
-<span class="hljs-comment">// Como char es un int podemos restarle 1</span>
+<span class="hljs-comment">// Como char es un int podemos hacerle operaciones matemáticas.</span>
 <span class="hljs-comment">// A - 1 al se enteros 65 - 1 = 64 y 64 es @ para una variable char.</span>
 <span class="hljs-keyword">char</span> arroba = A - <span class="hljs-number">1</span>;
+<span class="hljs-comment">// caracteres especiales</span>
+<span class="hljs-keyword">char</span> enter=<span class="hljs-string">'\n'</span>;
+<span class="hljs-keyword">char</span> tab=<span class="hljs-string">'\t'</span>;
 </code></pre>
 <h2 id="float-y-double"><a class="header-anchor" href="#float-y-double" aria-hidden="true">#</a> Float y  Double</h2>
 <p>Esto dos tipo de variables nos permiten guardar números decimales, la diferencia esta en la presión.</p>

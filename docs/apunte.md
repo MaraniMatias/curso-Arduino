@@ -1,7 +1,5 @@
 # Variables
-Las variables nos permiten guardar algún tipo de dato, para luego usarlo o manipularlo.
-
-Los tipos de variables mas usados.
+Las variables nos permiten guardar algún tipo de dato, para luego usarlo o manipularlo, algúnos de los  tipos de variables mas usados.
 
 ## Int
 
@@ -40,10 +38,12 @@ Para Arduino es un numero que representa un carácter según la tabla ASCII [asc
 ```c++
 char a = 'a'; // Representa a
 char A = 65;  // Representa A
-
-// Como char es un int podemos restarle 1
+// Como char es un int podemos hacerle operaciones matemáticas.
 // A - 1 al se enteros 65 - 1 = 64 y 64 es @ para una variable char.
 char arroba = A - 1;
+// caracteres especiales
+char enter='\n';
+char tab='\t';
 ```
 
 ## Float y  Double
