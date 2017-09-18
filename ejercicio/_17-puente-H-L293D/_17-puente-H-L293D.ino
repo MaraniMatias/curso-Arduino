@@ -1,19 +1,44 @@
-const int led = 13;
-const int b[] = {0, 1, 2, 3};
-
+//Motor A
+const int enableA = 5;
+const int MotorA1 = 6;
+const int MotorA2 = 7;
+//Motor B
+const int enableB = 8;
+const int MotorB1 = 9;
+const int MotorB2 = 10;
+ 
 void setup() {
-  pinMode(led, OUTPUT);
-  pinMode(b[0], OUTPUT);
-  pinMode(b[2], OUTPUT);
-  pinMode(b[3], OUTPUT);
-  pinMode(b[1], OUTPUT);
+    Serial.begin (9600);
+  pinMode (enableA, OUTPUT);
+  pinMode (MotorA1, OUTPUT);
+  pinMode (MotorA2, OUTPUT);  
+  pinMode (enableB, OUTPUT);
+  pinMode (MotorB1, OUTPUT);
+  pinMode (MotorB2, OUTPUT);  
 }
-
+ 
 void loop() {
-  for (int i=0; i<=4;i++) {
-    digitalWrite(b[i], HIGH);
-    delay(24);
-    digitalWrite(b[i], LOW);
-    delay(24);
-  }
+  Serial.println ("Habilitar Motores");
+  digitalWrite (enableA, HIGH);
+  digitalWrite (enableB, HIGH);
+  delay (1000);
+  
+  Serial.println ("Sentido 1");
+  digitalWrite (MotorA1, LOW);
+  digitalWrite (MotorA2, HIGH);
+  digitalWrite (MotorB1, LOW);
+  digitalWrite (MotorB2, HIGH);
+  delay (3000);
+  
+  Serial.println ("Sentido 2");
+  digitalWrite (MotorA1,HIGH);
+  digitalWrite (MotorA2,LOW);  
+  digitalWrite (MotorB1,HIGH);
+  digitalWrite (MotorB2,LOW);  
+  delay (3000);
+ 
+  Serial.println ("Para motores");
+  digitalWrite (enableA, LOW);
+  digitalWrite (enableB, LOW);
+  delay (3000);
 }
