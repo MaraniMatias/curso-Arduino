@@ -315,12 +315,19 @@ if (a > b) {
 > `_03-btn-ej-logicos`
 > junto a los apuntes del curso.
 
-Forma corta del if else, solo se puede usar si existe camino por el verdadero y el falso
+Forma corta del if else, solo se puede usar si existe camino por el verdadero y el falso, con una sola sentencia.
 ```c++
 int puntos, String nota = "";
 // Cuando puntos sea mayor igual a 6
 // la variable notas contiene "Aprobado" de lo contrario "Desaprobado"
 nota = puntos >= 6 ? "Aprobado" : "Desaprobado";
+
+// remplaza al escribir
+if (puntos >= 6 ?) {
+  nota = "Aprobado";
+} else {
+  nota = "Desaprobado";
+}
 ```
 
 ## Switch
