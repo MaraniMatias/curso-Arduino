@@ -1,3 +1,5 @@
+El material de curso lo puedes encontrar en [github.com/MaraniMatias/curso-Arduino](https://goo.gl/VKMCUF)
+
 # Variables
 Las variables nos permiten guardar algún tipo de dato, para luego usarlo o manipularlo, algúnos de los  tipos de variables mas usados.
 
@@ -226,6 +228,10 @@ Como Arduino no puede variar los niveles de tension de sus pines, podemos simula
 Los pines PWM esta marcados con `~` como los pines 3,5,6,9,10,11,13.
 La función que usaremos es `analogWrite(pin,valor)` conde `pin` es el numero de pin a usar y `valor` puede variar d e 0 a 255.
 
+La imagen ayuda a entender que hace la función.
+
+![](./clases/img/pwm.jpeg)
+
 ```C++
 void setup() {
   pinMode(11, OUTPUT);
@@ -245,6 +251,8 @@ Con la función `tone(pin, frecuencia, duración)` podemos variar la frecuencia 
 Donde `frecuencia` puede variar 31 a 65535 (para Arduino Uno, Mega, Leonardo), `duracion` es el tiempo en que va a mantenerse esa frecuencia.
 
 Para usar varios pines necesitamos `noTone(pin)` para apagar los pines anteriores.
+
+![](./clases/img/tone.jpg)
 
 Ejemplo en [arduino.cc/en/Tutorial/ToneMelody](https://www.arduino.cc/en/Tutorial/ToneMelody)
 
@@ -547,6 +555,8 @@ void loop() {
 El sensor infrarrojo que usamos es _VS1838B_, con tres pin, 1º Señal, 2º tierra y el 3º 5 volt.
 En la carpeta datasheet hay más información, para este sensor conviene buscar cual es cada pin.
 
+![](./clases/img/sensor-infrarrojo.png)
+
 > También puedes ver los ejemplo
 > `_14a-control-inf`
 > `_18-debounce`
@@ -559,15 +569,35 @@ El integrado L293D nos permite manejar dos motores de corriente continua y inver
 
 La imagen muestra para que son cada pin del integrado.
 * Los pines `4,5,13,12` se conectan directamente a tierra.
-* Los pines `8,16` se conectan a los 5 volt.
+* En el pin `8` este pin recibe la tension correspondiente a lo que se desea manejar, motores 12 volt. LED 5 o 3 volts.
+* En el pin `16` se conectan a los 5 volt. de la placa Arduino.
 * Los pines `2,7,15,10` cuando estos pines reciben tensión, un pulso positivo, el integrado entrega tension en los pines `3,6,14,11` según corresponda, para el pin `2` corresponde ala salida `3`.
 * Los pines `1,9` habilita o deshabilitan la salida de los pines de ese lado del integrado.
 
 ![L293D](./clases/img/L293D.jpeg)
 
-Con este integrado maneja de manera igual que encender un led, solo hay que tener cuidado cuando tratamos de invertir el giro de motores de corriente continua porque si el motor recibe 5 volt en su dos pines se quema.
-
-Recomiendo probar primero con LED y la tension que corresponde para ellos.
+Con este integrado podemos manejar motores eléctricos, solo hay que avisarle al integrado que salida queremos activar, para ello tenemos que darle un pulso *HIGH* de manera igual que encender un led, y gracias ala configuración que tiene el integrado dará la tension que necesita el motor, *por ejemplo, si el pin 2 recibe un pulso HIGH el integrado se encarga de dar un pulso HIGH al pin 3*.
+**Algo importante** hay que tener cuidado cuando trabajamos con con motores, imaginemos tener conectado el motor en conectado en los pines 3 y 6, cuando llega un pulso `HIGH` al pin 2 y un pulso `LOW`, el integrado entrega tension al pin 3 ahora si por error damos un pulso `HIGH` a los pines 2 y 7 el integrado entrega tension a los pines 3 y 6 ala vez de esta manera la bobina del motor recibe tension por su dos extremos provocando que se **queme**.
+Por ese motivo para aprender a usar este integrado recomiendo probar con LEDs y la tension que corresponde para ellos, antes de usar motores.
 
 En la carpeta datasheet hay más información para el integrado L293D.
+
+## Circuitos
+
+Con dos motores de corriente continua, esta conexión permite invertir el giro de cada motor.
+
+![](./clases/img/l293D-dos-motores-cc.png)
+
+> También puedes ver los ejemplo
+> `_17-puente-h-l293d`
+> junto a los apuntes del curso.
+
+Conexión para un motor paso a paso bipolar.
+
+![](./clases/img/l293D-motor-paso-a-paso-bipolar.png)
+
+> También puedes ver los ejemplo
+> `_16-l293d-motor-paso-a-paso-bipolar`
+> `_16-l293d-motor-paso-a-paso-4-bobinas`
+> junto a los apuntes del curso.
 

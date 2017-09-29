@@ -1,4 +1,5 @@
-<!DOCTYPE html><html><head><title>apunte</title><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/home/marani/Documents/bin/node/lib/node_modules/mdmath2html/node_modules/github-markdown-css/github-markdown.css"><link rel="stylesheet" href="/home/marani/Documents/bin/node/lib/node_modules/mdmath2html/node_modules/highlight.js/styles/tomorrow.css"><style>.markdown-body {box-sizing: border-box;min-width: 200px;margin: 0 auto;padding: 45px;}</style><script type="text/javascript" async src="/home/marani/Documents/bin/node/lib/node_modules/mdmath2html/node_modules/mathjax/MathJax.js"></script><script type="text/javascript" async src="/home/marani/Documents/bin/node/lib/node_modules/mdmath2html/node_modules/mathjax/config/TeX-MML-AM_HTMLorMML-full.js"></script></head><body class="markdown-body"><h1 id="variables"><a class="header-anchor" href="#variables" aria-hidden="true">#</a> Variables</h1>
+<!DOCTYPE html><html><head><title>apunte</title><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/home/marani/Documents/home-bin/bin/node/lib/node_modules/mdmath2html/node_modules/github-markdown-css/github-markdown.css"><link rel="stylesheet" href="/home/marani/Documents/home-bin/bin/node/lib/node_modules/mdmath2html/node_modules/highlight.js/styles/tomorrow.css"><style>.markdown-body {box-sizing: border-box;min-width: 200px;margin: 0 auto;padding: 45px;}</style><script type="text/javascript" async src="/home/marani/Documents/home-bin/bin/node/lib/node_modules/mdmath2html/node_modules/mathjax/MathJax.js"></script><script type="text/javascript" async src="/home/marani/Documents/home-bin/bin/node/lib/node_modules/mdmath2html/node_modules/mathjax/config/TeX-MML-AM_HTMLorMML-full.js"></script></head><body class="markdown-body"><p>El material de curso lo puedes encontrar en <a href="https://goo.gl/VKMCUF">github.com/MaraniMatias/curso-Arduino</a></p>
+<h1 id="variables"><a class="header-anchor" href="#variables" aria-hidden="true">#</a> Variables</h1>
 <p>Las variables nos permiten guardar algún tipo de dato, para luego usarlo o manipularlo, algúnos de los  tipos de variables mas usados.</p>
 <h2 id="int"><a class="header-anchor" href="#int" aria-hidden="true">#</a> Int</h2>
 <p>Usada para guardar numero enteros positivos o negativos.</p>
@@ -261,6 +262,8 @@ oracion.replace(<span class="hljs-string">'o'</span>, <span class="hljs-string">
 <p>Como Arduino no puede variar los niveles de tension de sus pines, podemos simular señales analógicas, variando la longitud del pulso, de esta manera reducimos la tension promedio que llega a un LED, por ejemplo.</p>
 <p>Los pines PWM esta marcados con <code>~</code> como los pines 3,5,6,9,10,11,13.
 La función que usaremos es <code>analogWrite(pin,valor)</code> conde <code>pin</code> es el numero de pin a usar y <code>valor</code> puede variar d e 0 a 255.</p>
+<p>La imagen ayuda a entender que hace la función.</p>
+<p><img src="./clases/img/pwm.jpeg" alt=""></p>
 <pre><code class="language-C++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
   pinMode(<span class="hljs-number">11</span>, OUTPUT);
 }
@@ -276,6 +279,7 @@ La función que usaremos es <code>analogWrite(pin,valor)</code> conde <code>pin<
 <p>Con la función <code>tone(pin, frecuencia, duración)</code> podemos variar la frecuencia del pulso, normalmente usada para con piezo buzzer.</p>
 <p>Donde <code>frecuencia</code> puede variar 31 a 65535 (para Arduino Uno, Mega, Leonardo), <code>duracion</code> es el tiempo en que va a mantenerse esa frecuencia.</p>
 <p>Para usar varios pines necesitamos <code>noTone(pin)</code> para apagar los pines anteriores.</p>
+<p><img src="./clases/img/tone.jpg" alt=""></p>
 <p>Ejemplo en <a href="https://www.arduino.cc/en/Tutorial/ToneMelody">arduino.cc/en/Tutorial/ToneMelody</a></p>
 <blockquote>
 <p>También puedes ver los ejemplo
@@ -545,6 +549,7 @@ decode_results results;
 </code></pre>
 <p>El sensor infrarrojo que usamos es <em>VS1838B</em>, con tres pin, 1º Señal, 2º tierra y el 3º 5 volt.
 En la carpeta datasheet hay más información, para este sensor conviene buscar cual es cada pin.</p>
+<p><img src="./clases/img/sensor-infrarrojo.png" alt=""></p>
 <blockquote>
 <p>También puedes ver los ejemplo
 <code>_14a-control-inf</code>
@@ -557,12 +562,30 @@ El integrado L293D nos permite manejar dos motores de corriente continua y inver
 <p>La imagen muestra para que son cada pin del integrado.</p>
 <ul>
 <li>Los pines <code>4,5,13,12</code> se conectan directamente a tierra.</li>
-<li>Los pines <code>8,16</code> se conectan a los 5 volt.</li>
+<li>En el pin <code>8</code> este pin recibe la tension correspondiente a lo que se desea manejar, motores 12 volt. LED 5 o 3 volts.</li>
+<li>En el pin <code>16</code> se conectan a los 5 volt. de la placa Arduino.</li>
 <li>Los pines <code>2,7,15,10</code> cuando estos pines reciben tensión, un pulso positivo, el integrado entrega tension en los pines <code>3,6,14,11</code> según corresponda, para el pin <code>2</code> corresponde ala salida <code>3</code>.</li>
 <li>Los pines <code>1,9</code> habilita o deshabilitan la salida de los pines de ese lado del integrado.</li>
 </ul>
 <p><img src="./clases/img/L293D.jpeg" alt="L293D"></p>
-<p>Con este integrado maneja de manera igual que encender un led, solo hay que tener cuidado cuando tratamos de invertir el giro de motores de corriente continua porque si el motor recibe 5 volt en su dos pines se quema.</p>
-<p>Recomiendo probar primero con LED y la tension que corresponde para ellos.</p>
+<p>Con este integrado podemos manejar motores eléctricos, solo hay que avisarle al integrado que salida queremos activar, para ello tenemos que darle un pulso <em>HIGH</em> de manera igual que encender un led, y gracias ala configuración que tiene el integrado dará la tension que necesita el motor, <em>por ejemplo, si el pin 2 recibe un pulso HIGH el integrado se encarga de dar un pulso HIGH al pin 3</em>.
+<strong>Algo importante</strong> hay que tener cuidado cuando trabajamos con con motores, imaginemos tener conectado el motor en conectado en los pines 3 y 6, cuando llega un pulso <code>HIGH</code> al pin 2 y un pulso <code>LOW</code>, el integrado entrega tension al pin 3 ahora si por error damos un pulso <code>HIGH</code> a los pines 2 y 7 el integrado entrega tension a los pines 3 y 6 ala vez de esta manera la bobina del motor recibe tension por su dos extremos provocando que se <strong>queme</strong>.
+Por ese motivo para aprender a usar este integrado recomiendo probar con LEDs y la tension que corresponde para ellos, antes de usar motores.</p>
 <p>En la carpeta datasheet hay más información para el integrado L293D.</p>
+<h2 id="circuitos"><a class="header-anchor" href="#circuitos" aria-hidden="true">#</a> Circuitos</h2>
+<p>Con dos motores de corriente continua, esta conexión permite invertir el giro de cada motor.</p>
+<p><img src="./clases/img/l293d-dos-motores-cc.png" alt=""></p>
+<blockquote>
+<p>También puedes ver los ejemplo
+<code>_17-puente-h-l293d</code>
+junto a los apuntes del curso.</p>
+</blockquote>
+<p>Conexión para un motor paso a paso bipolar.</p>
+<p><img src="./clases/img/l293d-motor-paso-a-paso-bipolar.png" alt=""></p>
+<blockquote>
+<p>También puedes ver los ejemplo
+<code>_16-l293d-motor-paso-a-paso-bipolar</code>
+<code>_16-l293d-motor-paso-a-paso-4-bobinas</code>
+junto a los apuntes del curso.</p>
+</blockquote>
 </body></html>
