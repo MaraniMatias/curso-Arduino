@@ -1,6 +1,6 @@
-const int linea0 = 0;
-const int linea1 = 1;
-const int linea2 = 2;
+const int linea0 = 8;
+const int linea1 = 9;
+const int linea2 = 10;
 
 void setup() {
   Serial.begin(9600);

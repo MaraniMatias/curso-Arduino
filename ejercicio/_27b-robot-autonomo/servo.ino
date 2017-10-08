@@ -19,8 +19,13 @@ void moverServoRangoCompleto() {
     motorServo.write(pos);
     delay(5);
   }
+  delay(1000);
 }
 
+void moverServo(short int pos, short int esperar) {
+  motorServo.write(pos);
+  delay(esperar >= 5 ? esperar : 10 );
+}
 void moverServo(short int pos) {
   motorServo.write(pos);
 }

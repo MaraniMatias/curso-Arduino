@@ -1,13 +1,13 @@
 //Configuracion para manejar los 4 motores corriente continua.
 //Los manejaremos de apares, para un lado y para el otro pero de a dos.
 
-const int pinEncenderMotorA = 6; // pin PWM calble violeta
+const int pinEncenderMotorA = 5; // pin PWM calble violeta
 const int pinSentidoMotorA1 = 4; // calbe verde
 const int pinSentidoMotorA2 = 7; // calbe azul
 
 const int pinSentidoMotorB1 = 3; // calbe amarillo
 const int pinSentidoMotorB2 = 2; // calbe naranja
-const int pinEncenderMotorB = 5; // pin PWM calbe rojo
+const int pinEncenderMotorB = 6; // pin PWM calbe rojo
 
 void setupMototres() {
   pinMode(pinEncenderMotorA, OUTPUT);
@@ -25,17 +25,10 @@ void mover(boolean sentido, short int velocidad) {
   analogWrite(pinEncenderMotorA, velocidad);
   analogWrite(pinEncenderMotorB, velocidad);
 
-  if (sentido) {
-    digitalWrite(pinSentidoMotorA1, LOW);// LADO B ->
-    digitalWrite(pinSentidoMotorA2, HIGH); // LADO B <-
-    digitalWrite(pinSentidoMotorB1, LOW); // LADO A ->
-    digitalWrite(pinSentidoMotorB2, HIGH); // LADO A <-
-  } else {
-    digitalWrite(pinSentidoMotorA1, HIGH);// LADO B ->
-    digitalWrite(pinSentidoMotorA2, LOW); // LADO B <-
-    digitalWrite(pinSentidoMotorB1, HIGH); // LADO A ->
-    digitalWrite(pinSentidoMotorB2, LOW); // LADO A <-
-  }
+  digitalWrite(pinSentidoMotorA1, !sentido);// LADO B ->
+  digitalWrite(pinSentidoMotorA2, sentido); // LADO B <-
+  digitalWrite(pinSentidoMotorB1, !sentido); // LADO A ->
+  digitalWrite(pinSentidoMotorB2, sentido); // LADO A <-
 }
 
 void girar(boolean sentido) {
@@ -44,17 +37,11 @@ void girar(boolean sentido) {
   digitalWrite(pinEncenderMotorA, HIGH);
   digitalWrite(pinEncenderMotorB, HIGH);
 
-  if (sentido) {
-    digitalWrite(pinSentidoMotorA1, LOW);// LADO B ->
-    digitalWrite(pinSentidoMotorA2, HIGH); // LADO B <-
-    digitalWrite(pinSentidoMotorB1, HIGH); // LADO A ->
-    digitalWrite(pinSentidoMotorB2, LOW); // LADO A <-
-  } else {
-    digitalWrite(pinSentidoMotorA1, HIGH);// LADO B ->
-    digitalWrite(pinSentidoMotorA2, LOW); // LADO B <-
-    digitalWrite(pinSentidoMotorB1, LOW); // LADO A ->
-    digitalWrite(pinSentidoMotorB2, HIGH); // LADO A <-
-  }
+  digitalWrite(pinSentidoMotorA1, !sentido);// LADO B ->
+  digitalWrite(pinSentidoMotorA2, sentido); // LADO B <-
+  digitalWrite(pinSentidoMotorB1, sentido); // LADO A ->
+  digitalWrite(pinSentidoMotorB2, !sentido); // LADO A <-
+
   delay(500); // mener girando por medio segundo
 }
 

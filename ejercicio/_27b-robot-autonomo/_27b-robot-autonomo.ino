@@ -8,6 +8,7 @@ void setup() {
   setupServo() ;
   setupMototres();
 
+  moverServoRangoCompleto();
 }
 
 void loop() {

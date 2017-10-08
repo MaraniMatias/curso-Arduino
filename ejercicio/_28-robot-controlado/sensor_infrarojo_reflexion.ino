@@ -1,8 +1,8 @@
 // Sensores infrarojos por reflexion
 // Cuando esto pines envian cero
-const int pinIRDerecho = 3;
-const int pinIRCentro = 4;
-const int pinSIRZquierdo = 5;
+const int pinIRDerecho = 8;
+const int pinIRCentro = 9;
+const int pinSIRZquierdo = 10;
 
 void setupIRreflexion() {
   pinMode(pinIRDerecho, INPUT);
@@ -43,11 +43,8 @@ int IRreflexion (char sensor) {
       break;
   }
 
-  Serial.print("Leer sensor por reflexion ");
-  Serial.print(sensor);
-  Serial.print(" - valor: ");
-  Serial.println(rta);
-
+  mensaje("Leer sensor por reflexion ", sensor, " - valor: ", rta);
   return rta;
 }
+
 
