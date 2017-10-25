@@ -2,6 +2,8 @@
 
 [Presentación para el dictado del curso](https://goo.gl/VKMCUF)
 
+Apunte: [On-LIne](https://github.com/MaraniMatias/curso-Arduino/blob/master/docs/apunte.md) - [Descargar PDF](https://github.com/MaraniMatias/curso-Arduino/raw/master/apunte.pdf)
+
 ## Contenidos.
 Automatización, Sistema de control, Sensores, Actuadores, Domotica.
 Operadores lógicos, Temporizadores.
