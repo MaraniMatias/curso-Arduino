@@ -1,4 +1,4 @@
-# Curso de Programación y Operación de Arduino
+# Curso de Programación Arduino y Introducción a la Robótica
 
 [Presentación para el dictado del curso](https://goo.gl/VKMCUF)
 
