@@ -136,10 +136,10 @@ void setup() {
 ```c++
 int a = 50;
 float f;
-a = a + 0.5;  // como a es int su valor es 50
-f = a + 0.5;  // como f es float su valor es 50.05
-a = f;        // como a es int su valor es 50
-f = a;        // como f es float su valores es 50.00
+a = a + 1.5;  // como a es int su valor es 51
+f = a + 1.5;  // como f es float su valor es 51.05
+a = f;        // como a es int su valor es 51
+f = a;        // como f es float su valores es 51.00
 ```
 
 ## NULL
