@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>apunte</title><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/home/marani/Documents/home-bin/bin/node/lib/node_modules/mdmath2html/node_modules/github-markdown-css/github-markdown.css"><link rel="stylesheet" href="/home/marani/Documents/home-bin/bin/node/lib/node_modules/mdmath2html/node_modules/highlight.js/styles/tomorrow.css"><style>.markdown-body {box-sizing: border-box;min-width: 200px;margin: 0 auto;padding: 45px;}</style><script type="text/javascript" async src="/home/marani/Documents/home-bin/bin/node/lib/node_modules/mdmath2html/node_modules/mathjax/MathJax.js"></script><script type="text/javascript" async src="/home/marani/Documents/home-bin/bin/node/lib/node_modules/mdmath2html/node_modules/mathjax/config/TeX-MML-AM_HTMLorMML-full.js"></script></head><body class="markdown-body"><p>El material de curso lo puedes encontrar en <a href="https://goo.gl/VKMCUF">github.com/MaraniMatias/curso-Arduino</a></p>
+<!DOCTYPE html><html><head><title>apunte</title><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/home/marani/Documents/bin/node/lib/node_modules/mdmath2html/node_modules/github-markdown-css/github-markdown.css"><link rel="stylesheet" href="/home/marani/Documents/bin/node/lib/node_modules/mdmath2html/node_modules/highlight.js/styles/tomorrow.css"><style>.markdown-body {box-sizing: border-box;min-width: 200px;margin: 0 auto;padding: 45px;}</style><script type="text/javascript" async src="/home/marani/Documents/bin/node/lib/node_modules/mdmath2html/node_modules/mathjax/MathJax.js"></script><script type="text/javascript" async src="/home/marani/Documents/bin/node/lib/node_modules/mdmath2html/node_modules/mathjax/config/TeX-MML-AM_HTMLorMML-full.js"></script></head><body class="markdown-body"><p>El material de curso lo puedes encontrar en <a href="https://goo.gl/VKMCUF">github.com/MaraniMatias/curso-Arduino</a></p>
 <h1 id="variables"><a class="header-anchor" href="#variables" aria-hidden="true">#</a> Variables</h1>
 <p>Las variables nos permiten guardar algún tipo de dato, para luego usarlo o manipularlo, algúnos de los  tipos de variables mas usados.</p>
 <h2 id="int"><a class="header-anchor" href="#int" aria-hidden="true">#</a> Int</h2>
@@ -190,10 +190,10 @@ Para Arduino es un numero que representa un carácter según la tabla ASCII <a h
 <h2 id="conversion-automatica"><a class="header-anchor" href="#conversion-automatica" aria-hidden="true">#</a> Conversion automática</h2>
 <pre><code class="language-c++"><span class="hljs-keyword">int</span> a = <span class="hljs-number">50</span>;
 <span class="hljs-keyword">float</span> f;
-a = a + <span class="hljs-number">0.5</span>;  <span class="hljs-comment">// como a es int su valor es 50</span>
-f = a + <span class="hljs-number">0.5</span>;  <span class="hljs-comment">// como f es float su valor es 50.05</span>
-a = f;        <span class="hljs-comment">// como a es int su valor es 50</span>
-f = a;        <span class="hljs-comment">// como f es float su valores es 50.00</span>
+a = a + <span class="hljs-number">1.5</span>;  <span class="hljs-comment">// como a es int su valor es 51</span>
+f = a + <span class="hljs-number">1.5</span>;  <span class="hljs-comment">// como f es float su valor es 51.05</span>
+a = f;        <span class="hljs-comment">// como a es int su valor es 51</span>
+f = a;        <span class="hljs-comment">// como f es float su valores es 51.00</span>
 </code></pre>
 <h2 id="null"><a class="header-anchor" href="#null" aria-hidden="true">#</a> NULL</h2>
 <p>Cunado una variables es declara pero no se le asigna valor, tiene un valor nulo, NULL.</p>
@@ -574,14 +574,14 @@ Por ese motivo para aprender a usar este integrado recomiendo probar con LEDs y 
 <p>En la carpeta datasheet hay más información para el integrado L293D.</p>
 <h2 id="circuitos"><a class="header-anchor" href="#circuitos" aria-hidden="true">#</a> Circuitos</h2>
 <p>Con dos motores de corriente continua, esta conexión permite invertir el giro de cada motor.</p>
-<p><img src="./clases/img/l293d-dos-motores-cc.png" alt=""></p>
+<p><img src="./clases/img/l293D-dos-motores-cc.png" alt=""></p>
 <blockquote>
 <p>También puedes ver los ejemplo
 <code>_17-puente-h-l293d</code>
 junto a los apuntes del curso.</p>
 </blockquote>
 <p>Conexión para un motor paso a paso bipolar.</p>
-<p><img src="./clases/img/l293d-motor-paso-a-paso-bipolar.png" alt=""></p>
+<p><img src="./clases/img/l293D-motor-paso-a-paso-bipolar.png" alt=""></p>
 <blockquote>
 <p>También puedes ver los ejemplo
 <code>_16-l293d-motor-paso-a-paso-bipolar</code>
