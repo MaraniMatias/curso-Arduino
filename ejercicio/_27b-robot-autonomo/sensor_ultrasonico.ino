@@ -4,7 +4,7 @@
 //# Configuracion
 const int TRIGGER_PIN = A5;   // cable naranja
 const int ECHO_PIN    = A4;   // cable rojo
-const int MAX_DISTANCE = 400; // rnago maximo del sensor en cm
+const int MAX_DISTANCE = 400; // rango maximo del sensor en cm
 
 NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
 

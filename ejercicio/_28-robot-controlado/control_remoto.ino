@@ -1,6 +1,6 @@
-
 //# Librerias
-#include <IRremote.h>    // Sensor infrafojo para control remoto
+// Sensor infrafojo para control remoto
+#include <IRremote.h>    // http://z3t0.github.io/Arduino-IRremote/
 
 //# Configuracion
 const int RECV_PIN = 11;

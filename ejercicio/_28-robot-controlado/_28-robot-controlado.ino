@@ -1,5 +1,29 @@
+/*
+   Conexiones
+
+   Motores - Archivo: motores.ino
+   pinEncenderMotorA = 6; // pin PWM calble violeta
+   pinSentidoMotorA1 = 4; // calbe verde
+   pinSentidoMotorA2 = 7; // calbe azul
+
+   pinSentidoMotorB1 = 3; // calbe amarillo
+   pinSentidoMotorB2 = 2; // calbe naranja
+   pinEncenderMotorB = 5; // pin PWM calbe rojo
+
+   Infrarojo Reflexion - Archivo: rarojo_reflexion
+   Son como botones, reciben un pulso positivo
+   pinIRDerecho = 8;
+   pinIRCentro = 9;
+   pinSIRZquierdo = 10;
+
+   Control Remoto - Archivo: control_remoto.ino
+   Necesita la libreria IRremote.h (http://z3t0.github.io/Arduino-IRremote/)
+   RECV_PIN = 11;
+*/
+
 // LED indicador
 const int STATUS_PIN = 13;
+
 boolean lineaBlanca = true;
 boolean segirlinea = false;
 short int velocidad = 180;
