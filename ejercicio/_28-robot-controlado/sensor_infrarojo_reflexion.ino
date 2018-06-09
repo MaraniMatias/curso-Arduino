@@ -1,5 +1,5 @@
-// Sensores infrarojos por reflexion
-// Cuando esto pines envian cero
+// Sensores infrarrojos por reflexión
+// Cuando esto pines envían cero
 const int pinIRDerecho = 8;
 const int pinIRCentro = 9;
 const int pinSIRZquierdo = 10;
@@ -22,7 +22,7 @@ void verValoresIRreflexion() {
 
 
 // IRreflexion, devuelve 0 o 1
-// indaica cuando el has infrarojo regresa al sensor.
+// indica cuando el has infrarrojo regresa al sensor.
 //
 // el parámetro 'sensor' puede ser 'D','C','I'; para indicar que sensor queremos leer.
 int IRreflexion(char sensor) {
@@ -43,6 +43,6 @@ int IRreflexion(char sensor) {
     break;
   }
 
-  mensaje("Leer sensor por reflexion ", sensor, " - valor: ", rta);
+  mensaje("Leer sensor por reflexión ", sensor, " - valor: ", rta);
   return rta;
 }

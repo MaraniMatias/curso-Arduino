@@ -1,5 +1,5 @@
 // # Defino variables constantes.
-// Estas variables corresponden al codigo de cada boton
+// Estas variables corresponden al código de cada botón
 // del control remoto.
 #define BOTON_CH_MENOS    16753245
 #define BOTON_CH          16736925
@@ -30,7 +30,7 @@
 #define BOTON_9           16732845
 
 // Código fin de secuencia.
-// Codigo enviado despues de cada codigo de boton,
+// Código enviado después de cada código de botón,
 // indica el fin de la secuencia de pulsos correspondiente
-// al fin de la recepcion de los mismos.
+// al fin de la recepción de los mismos.
 #define CODE_CIERRE_BOTON 4294967295
