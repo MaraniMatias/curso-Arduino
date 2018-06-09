@@ -25,7 +25,7 @@
  *  pinSentidoMotorB2 = 2; // cable naranja
  *  pinEncenderMotorB = 5; // pin PWM cable rojo
 
- *  Infrarrojo Reflexión - Archivo: sensor_infrarojo_reflexiron
+ *  Infrarrojo Reflexión - Archivo: sensor_infrarrojo_reflexivo
  *  Son como botones, reciben un pulso positivo
  *  pinIRDerecho = 8;
  *  pinIRCentro = 9;
