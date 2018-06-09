@@ -1,6 +1,6 @@
-<!DOCTYPE html><html><head><title>apunte</title><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/home/marani/Documents/bin/node/lib/node_modules/mdmath2html/node_modules/github-markdown-css/github-markdown.css"><link rel="stylesheet" href="/home/marani/Documents/bin/node/lib/node_modules/mdmath2html/node_modules/highlight.js/styles/tomorrow.css"><style>.markdown-body {box-sizing: border-box;min-width: 200px;margin: 0 auto;padding: 45px;}</style><script type="text/javascript" async src="/home/marani/Documents/bin/node/lib/node_modules/mdmath2html/node_modules/mathjax/MathJax.js"></script><script type="text/javascript" async src="/home/marani/Documents/bin/node/lib/node_modules/mdmath2html/node_modules/mathjax/config/TeX-MML-AM_HTMLorMML-full.js"></script></head><body class="markdown-body"><p>El material de curso lo puedes encontrar en <a href="https://goo.gl/VKMCUF">github.com/MaraniMatias/curso-Arduino</a></p>
+<!DOCTYPE html><html><head><title>apunte</title><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/home/marani/.nvm/versions/node/v8.11.2/lib/node_modules/mdmath2html/node_modules/github-markdown-css/github-markdown.css"><link rel="stylesheet" href="/home/marani/.nvm/versions/node/v8.11.2/lib/node_modules/mdmath2html/node_modules/highlight.js/styles/tomorrow.css"><style>.markdown-body {box-sizing: border-box;min-width: 200px;margin: 0 auto;padding: 45px;}</style><script type="text/javascript" async src="/home/marani/.nvm/versions/node/v8.11.2/lib/node_modules/mdmath2html/node_modules/mathjax/MathJax.js"></script><script type="text/javascript" async src="/home/marani/.nvm/versions/node/v8.11.2/lib/node_modules/mdmath2html/node_modules/mathjax/config/TeX-MML-AM_HTMLorMML-full.js"></script></head><body class="markdown-body"><p>El material de curso lo puedes encontrar en <a href="https://goo.gl/VKMCUF">github.com/MaraniMatias/curso-Arduino</a></p>
 <h1 id="variables"><a class="header-anchor" href="#variables" aria-hidden="true">#</a> Variables</h1>
-<p>Las variables nos permiten guardar algún tipo de dato, para luego usarlo o manipularlo, algúnos de los  tipos de variables mas usados.</p>
+<p>Las variables nos permiten guardar algún tipo de dato, para luego usarlo o manipularlo, algunos de los  tipos de variables mas usados.</p>
 <h2 id="int"><a class="header-anchor" href="#int" aria-hidden="true">#</a> Int</h2>
 <p>Usada para guardar numero enteros positivos o negativos.</p>
 <table>
@@ -515,7 +515,20 @@ result = <span class="hljs-built_in">floor</span>( <span class="hljs-number">5.5
 result = trunc(<span class="hljs-number">-3.8</span>);  <span class="hljs-comment">// -3.0</span>
 </code></pre>
 <h2 id="de-terceros"><a class="header-anchor" href="#de-terceros" aria-hidden="true">#</a> De terceros</h2>
-<p>Para manejar un control remoto, con infrarrojo usaremos las librerías que podemos descargar de <a href="https://github.com/z3t0/Arduino-IRremote">github.com/z3t0/Arduino-IRremote</a></p>
+<p>Para manejar un control remoto, con infrarrojo usaremos las librerías que podemos descargar de <a href="https://github.com/z3t0/Arduino-IRremote">github.com/z3t0/Arduino-IRremote</a> o de <a href="https://github.com/MaraniMatias/curso-Arduino/blob/master/datasheet/librerias/IRremote.zip?raw=true">IRremote.zip</a>.</p>
+<blockquote>
+<p><strong>Nota</strong>: también incluí la librería para manejar el sensor de ultrasonido. <a href="https://github.com/MaraniMatias/curso-Arduino/blob/master/datasheet/librerias/Ultrasonic%20Sensor%20SR04.zip?raw=true">NewPing</a></p>
+</blockquote>
+<blockquote>
+<p><strong>Instalar una librería de tercero</strong>
+Para que Arduino IDE reconozca un librería de tercero primero hay que importarla, después estará disponible para cualquier proyecto.</p>
+<p>Pasos a seguir:</p>
+<ol>
+<li>Descargar la librería en formato zip.</li>
+<li>En Arduino IDE ir la menu <strong>Programa</strong> luego <strong>Incluir Librería</strong> después <strong>Añadir Librería</strong></li>
+<li>Buscar donde descargamos el archivo ZIP y pulsar aceptar.</li>
+</ol>
+</blockquote>
 <pre><code class="language-c++"><span class="hljs-comment">// Importamos la librería a usar</span>
 <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;IRremote.h&gt;</span></span>
 <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;IRremoteInt.h&gt;</span></span>
@@ -549,7 +562,7 @@ decode_results results;
 </code></pre>
 <p>El sensor infrarrojo que usamos es <em>VS1838B</em>, con tres pin, 1º Señal, 2º tierra y el 3º 5 volt.
 En la carpeta datasheet hay más información, para este sensor conviene buscar cual es cada pin.</p>
-<p><img src="./clases/img/sensor-infrarrojo.png" alt=""></p>
+<p><img src="./clases/img/sensor-infrarrojo.png" alt="sensor-infrarrojo.png"></p>
 <blockquote>
 <p>También puedes ver los ejemplo
 <code>_14a-control-inf</code>
