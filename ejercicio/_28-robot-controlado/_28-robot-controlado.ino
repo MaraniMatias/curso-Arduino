@@ -91,12 +91,12 @@ void loop() {
     
     case BOTON_2:               // 2
       mover(true, velocidad);
-      delay(200);
+      delay(tiempo);
     break;
       
     case BOTON_4:               // 4
       girar(false, 200);
-      delay(200);
+      delay(tiempo);
     break;
     
     case BOTON_5:               // 5
@@ -106,12 +106,12 @@ void loop() {
     
     case BOTON_6:               // 6
       girar(true, 200);
-      delay(200);
+      delay(tiempo);
     break;
     
     case BOTON_8:               // 8
       mover(false, velocidad);
-      delay(200);
+      delay(tiempo);
     break;
 
     case BOTON_VOL_MENOS:       // Vol-
