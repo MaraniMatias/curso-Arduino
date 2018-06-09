@@ -520,14 +520,15 @@ result = trunc(-3.8);  // -3.0
 
 Para manejar un control remoto, con infrarrojo usaremos las librerías que podemos descargar de [github.com/z3t0/Arduino-IRremote](https://github.com/z3t0/Arduino-IRremote) o de [IRremote.zip](https://github.com/MaraniMatias/curso-Arduino/blob/master/datasheet/librerias/IRremote.zip?raw=true).
 
-> Nota: también incluí la librería para manejar el sensor de ultrasonido. [sensor-infrarrojo.png](https://github.com/MaraniMatias/curso-Arduino/blob/master/datasheet/librerias/Ultrasonic%20Sensor%20SR04.zip?raw=true)
+> __Nota__: también incluí la librería para manejar el sensor de ultrasonido. [NewPing](https://github.com/MaraniMatias/curso-Arduino/blob/master/datasheet/librerias/Ultrasonic%20Sensor%20SR04.zip?raw=true)
 
-Para que Arduino IDE reconozca un librería de tercero primero hay que importarla, después estará disponible para cualquier proyecto.
-
-Pasos a seguir:
-1. Descargar la librería en formato zip.
-2. En Arduino IDE ir la menu __Programa__ luego __Incluir Librería__ después __Añadir Librería__
-3. Buscar donde descargamos el archivo ZIP y pulsar aceptar.
+> __Instalar una librería de tercero__
+> Para que Arduino IDE reconozca un librería de tercero primero hay que importarla, después estará disponible para cualquier proyecto.
+>
+> Pasos a seguir:
+> 1. Descargar la librería en formato zip.
+> 2. En Arduino IDE ir la menu __Programa__ luego __Incluir Librería__ después __Añadir Librería__
+> 3. Buscar donde descargamos el archivo ZIP y pulsar aceptar.
 
 ```c++
 // Importamos la librería a usar
