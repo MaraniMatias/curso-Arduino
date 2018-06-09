@@ -1,7 +1,7 @@
 El material de curso lo puedes encontrar en [github.com/MaraniMatias/curso-Arduino](https://goo.gl/VKMCUF)
 
 # Variables
-Las variables nos permiten guardar algún tipo de dato, para luego usarlo o manipularlo, algúnos de los  tipos de variables mas usados.
+Las variables nos permiten guardar algún tipo de dato, para luego usarlo o manipularlo, algunos de los  tipos de variables mas usados.
 
 ## Int
 
@@ -518,7 +518,16 @@ result = trunc(-3.8);  // -3.0
 
 ## De terceros
 
-Para manejar un control remoto, con infrarrojo usaremos las librerías que podemos descargar de [github.com/z3t0/Arduino-IRremote](https://github.com/z3t0/Arduino-IRremote)
+Para manejar un control remoto, con infrarrojo usaremos las librerías que podemos descargar de [github.com/z3t0/Arduino-IRremote](https://github.com/z3t0/Arduino-IRremote) o de [IRremote.zip](https://github.com/MaraniMatias/curso-Arduino/blob/master/datasheet/librerias/IRremote.zip?raw=true).
+
+> Nota: también incluí la librería para manejar el sensor de ultrasonido. [sensor-infrarrojo.png](https://github.com/MaraniMatias/curso-Arduino/blob/master/datasheet/librerias/Ultrasonic%20Sensor%20SR04.zip?raw=true)
+
+Para que Arduino IDE reconozca un librería de tercero primero hay que importarla, después estará disponible para cualquier proyecto.
+
+Pasos a seguir:
+1. Descargar la librería en formato zip.
+2. En Arduino IDE ir la menu __Programa__ luego __Incluir Librería__ después __Añadir Librería__
+3. Buscar donde descargamos el archivo ZIP y pulsar aceptar.
 
 ```c++
 // Importamos la librería a usar
@@ -555,7 +564,7 @@ void loop() {
 El sensor infrarrojo que usamos es _VS1838B_, con tres pin, 1º Señal, 2º tierra y el 3º 5 volt.
 En la carpeta datasheet hay más información, para este sensor conviene buscar cual es cada pin.
 
-![](./clases/img/sensor-infrarrojo.png)
+![sensor-infrarrojo.png](./clases/img/sensor-infrarrojo.png)
 
 > También puedes ver los ejemplo
 > `_14a-control-inf`
