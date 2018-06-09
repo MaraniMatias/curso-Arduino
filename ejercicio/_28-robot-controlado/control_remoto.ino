@@ -1,8 +1,8 @@
-//# Librerias
+// # Librerias
 // Sensor infrafojo para control remoto
 #include <IRremote.h>    // http://z3t0.github.io/Arduino-IRremote/
 
-//# Configuracion
+// # Configuracion
 const int RECV_PIN = 11;
 IRrecv irrecv(RECV_PIN);
 decode_results controlRemoto;
@@ -13,7 +13,7 @@ void setupControl() {
 }
 
 void verValoresControlRemoto() {
-  if (irrecv.decode(&controlRemoto))    {
+  if (irrecv.decode(&controlRemoto)) {
     Serial.print("Codigo del boton: ");
     ultimoValor = controlRemoto.value;
     Serial.println(controlRemoto.value);

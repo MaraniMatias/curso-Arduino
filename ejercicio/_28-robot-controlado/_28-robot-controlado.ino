@@ -20,6 +20,8 @@
    Necesita la libreria IRremote.h (http://z3t0.github.io/Arduino-IRremote/)
    RECV_PIN = 11;
 */
+// Cargo las constantes para los botones del control remoto 
+#include "codigos_botones.h"
 
 // LED indicador
 const int STATUS_PIN = 13;
@@ -34,52 +36,55 @@ void setup() {
 
   setupMototres();
   setupControl();
-
 }
 
 void loop() {
-  //verValoresIRreflexion();
-  verValoresControlRemoto();
+  // Funciones que escriben en el puerto serie.
+  // Para ver los mensajes ir a Heramientas -> Monitor Serie
+  // verValoresIRreflexion();
+  // verValoresControlRemoto();
 
-
+  // Elegir accion a tomar según el boton pulsado
   switch (ControlRemoto()) {
-    case 16750695: // 100x
+    case BOTON_100:             // 100+
       mensaje("Velocidad 200");
       velocidad = 200;
       break;
-    case 16756815: //200+
+    case BOTON_200:             // 200+
       mensaje("Velocidad 255");
       velocidad = 255;
       break;
-    case 16761405: // >||
+    case BOTON_PLAY_PAUSE:      // >||
       mensaje("Segur Linea");
       detenerse();
       segirlinea = !segirlinea;
       break;
-    case 16716015: // 4
+    case BOTON_4:               // 4
       girar(false, 200);
       delay(200);
       break;
-    case 16718055: // 2
+    case BOTON_2:               // 2
       mover(true, velocidad);
       delay(200);
       break;
-    case 16734885: // 6
+    case BOTON_6:               // 6
       girar(true, 200);
       delay(200);
       break;
-    case 16730805: // 8
+    case BOTON_8:               // 8
       mover(false, velocidad);
       delay(200);
       break;
-    case 16769565: // ch+
+    case BOTON_CH_MAS:          // ch+
       segirlinea = true;
       break;
-    case 16753245: // ch-
+    case BOTON_CH_MENOS:        // ch-
       segirlinea = false;
       break;
+    case BOTON_EQ:             // EQ
+      probarMotores();
+      break;
     default:
-      mensaje("boton no contemplado");
       break;
   }
 
@@ -90,5 +95,3 @@ void loop() {
   }
 
 }
-
-

@@ -25,7 +25,7 @@ void verValoresIRreflexion() {
 // indaica cuando el has infrarojo regresa al sensor
 //
 // int sensor puede ser 'D','C','I' ; para indicar que sensor queremos leer.
-int IRreflexion (char sensor) {
+int IRreflexion(char sensor) {
 
   short int rta = 0;
   switch (sensor) {
@@ -46,5 +46,3 @@ int IRreflexion (char sensor) {
   mensaje("Leer sensor por reflexion ", sensor, " - valor: ", rta);
   return rta;
 }
-
-
