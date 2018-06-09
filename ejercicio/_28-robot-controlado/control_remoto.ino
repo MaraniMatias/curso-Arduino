@@ -4,19 +4,28 @@
 
 // # Configuracion
 const int RECV_PIN = 11;
+
 IRrecv irrecv(RECV_PIN);
 decode_results controlRemoto;
+
+// Para guardar el último valor leído.
 long int ultimoValor;
 
 void setupControl() {
   irrecv.enableIRIn(); // Infrarojo control remoto
 }
 
+// Muestra y leer los códigos de los botones.
 void verValoresControlRemoto() {
   if (irrecv.decode(&controlRemoto)) {
-    Serial.print("Codigo del boton: ");
     ultimoValor = controlRemoto.value;
-    Serial.println(controlRemoto.value);
+    
+    // Mostrar valores utiles.
+    if (controlRemoto.value != CODE_CIERRE_BOTON) {
+      Serial.print("Codigo del boton: ");
+      Serial.println(controlRemoto.value);
+    }
+    
     irrecv.resume();
   }
 }

@@ -29,7 +29,8 @@
 #define BOTON_8           16730805
 #define BOTON_9           16732845
 
+// Código fin de secuencia.
 // Codigo enviado despues de cada codigo de boton,
 // indica el fin de la secuencia de pulsos correspondiente
-// al fin de la recepcion de los mismos
-// #define CODE_CIERRE_BOTON 4294967295
+// al fin de la recepcion de los mismos.
+#define CODE_CIERRE_BOTON 4294967295

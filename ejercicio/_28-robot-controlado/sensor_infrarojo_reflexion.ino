@@ -22,25 +22,25 @@ void verValoresIRreflexion() {
 
 
 // IRreflexion, devuelve 0 o 1
-// indaica cuando el has infrarojo regresa al sensor
+// indaica cuando el has infrarojo regresa al sensor.
 //
-// int sensor puede ser 'D','C','I' ; para indicar que sensor queremos leer.
+// el parámetro 'sensor' puede ser 'D','C','I'; para indicar que sensor queremos leer.
 int IRreflexion(char sensor) {
 
   short int rta = 0;
   switch (sensor) {
     case 'D':
       rta = !digitalRead(pinIRDerecho);
-      break;
+    break;
     case 'C':
       rta = !digitalRead(pinIRCentro);
-      break;
+    break;
     case 'I':
       rta = !digitalRead(pinSIRZquierdo);
-      break;
+    break;
     default:
       rta = 0;
-      break;
+    break;
   }
 
   mensaje("Leer sensor por reflexion ", sensor, " - valor: ", rta);

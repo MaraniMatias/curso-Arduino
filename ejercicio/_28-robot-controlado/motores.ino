@@ -83,6 +83,7 @@ void girar(boolean sentido, short int velocidad) {
 // funcion para detener el robot
 void detenerse() {
   mensaje("Detenido");
+  
   digitalWrite(pinEncenderMotorA, LOW);
   digitalWrite(pinEncenderMotorB, LOW);
 
@@ -94,7 +95,8 @@ void detenerse() {
 
 // funcion que recive un parametro, sentido
 void mover(boolean sentido) {
-  mensaje("Moverse a ");
+  mensaje("Avanzar o Retroceder");
+  
   digitalWrite(pinEncenderMotorA, HIGH);
   digitalWrite(pinEncenderMotorB, HIGH);
   digitalWrite(pinSentidoMotorA1, !sentido);  // LADO B ->
@@ -106,6 +108,7 @@ void mover(boolean sentido) {
 // funcion que recive un parametro, sentido
 void girar(boolean sentido) {
   mensaje("Girar.");
+  
   digitalWrite(pinEncenderMotorA, HIGH);
   digitalWrite(pinEncenderMotorB, HIGH);
   digitalWrite(pinSentidoMotorA1, !sentido);  // LADO B ->
