@@ -11,10 +11,10 @@ void setup() {
 }
 
 void loop() {
-  digitalWrite( 8, HIGH);
-  digitalWrite(  pinLEDs[3], HIGH);
+  digitalWrite(8, HIGH);
+  digitalWrite( pinLEDs[3], HIGH);
 
   int index = 5;
-  digitalWrite( pinLEDs[index], HIGH);
+  digitalWrite(pinLEDs[index], HIGH);
 
 }

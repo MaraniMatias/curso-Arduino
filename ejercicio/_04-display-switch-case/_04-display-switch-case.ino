@@ -24,17 +24,21 @@ void setup() {
 }
 
 void loop() {
+  boolean btnSumarValue = digitalRead(btnSumar);
+  boolean btnRestarValue = digitalRead(btnRestar);
 
-  if (btnSumar == HIGH) {
+  if (btnRestarValue) {
     contador++;
   }
-  if (btnRestar == HIGH) {
+  if (btnRestarValue) {
     contador--;
   }
 
   switch (contador) {
     case 0:
-      // Uso ! porque al ser un display tiene el + común a todos, como es un diodo al recibir HIGH por el ánodo se apagara y al recibir LOW prenderá 
+      // Uso ! porque al ser un display tiene el + común a todos,
+      // como es un diodo al recibir HIGH
+      // por el ánodo se apagara y al recibir LOW prenderá
       digitalWrite( a, !HIGH);
       digitalWrite( b, !HIGH);
       digitalWrite( c, !HIGH);
